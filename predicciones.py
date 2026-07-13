@@ -1,93 +1,104 @@
 import os
-import requests
 import pandas as pd
+import numpy as np
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, classification_report
 
 # =====================================================================
-# 1. AUTENTICACIÓN CON LA API
+# 1. CARGAR DATOS DE LA TEMPORADA 2024
 # =====================================================================
-API_KEY = os.environ.get("API_SPORTS_KEY")
+archivo_entrada = "temporada_2024_crudo.csv"
 
-if not API_KEY:
-    print("❌ Error: No se encontró la variable de entorno 'API_SPORTS_KEY'.")
-    print("Asegúrate de haber guardado tu API key en Settings > Secrets > Actions.")
+if not os.path.exists(archivo_entrada):
+    print(f"❌ Error: No se encontró el archivo '{archivo_entrada}'.")
+    print("Asegúrate de haber ejecutado primero el paso anterior de descarga.")
     exit(1)
 
-# Endpoint oficial de API-Sports para Fútbol Americano (NFL)
-URL = "https://v1.american-football.api-sports.io/games"
-HEADERS = {
-    "x-apisports-key": API_KEY
-}
-PARAMS = {
-    "league": "1",    # ID 1 corresponde a la NFL
-    "season": "2024"   # Temporada completa disponible en el plan gratuito
-}
+print(f"📖 Cargando datos históricos desde {archivo_entrada}...")
+df = pd.read_csv(archivo_entrada)
+
+# Filtramos solo los partidos terminados ("FT") y los ordenamos por semana
+df = df[df['estado_partido'] == 'FT'].sort_values(by='semana').reset_index(drop=True)
+print(f"🏈 Procesando {len(df)} partidos finalizados de la temporada regular.")
 
 # =====================================================================
-# 2. PETICIÓN Y DESCARGA
+# 2. INGENIERÍA DE CARACTERÍSTICAS (PROMEDIOS MÓVILES ACUMULADOS)
 # =====================================================================
-print("🚀 Conectando con API-Sports para descargar la temporada NFL 2024...")
-try:
-    response = requests.get(URL, headers=HEADERS, params=PARAMS)
-    response.raise_for_status()  
-    data = response.json()
-except Exception as e:
-    print(f"❌ Error crítico en la conexión: {e}")
-    exit(1)
+# Creamos diccionarios para registrar el desempeño de cada equipo paso a paso
+equipos = pd.concat([df['equipo_local'], df['equipo_visitante']]).unique()
+historial_anotados = {equipo: [] for equipo in equipos}
+historial_recibidos = {equipo: [] for equipo in equipos}
 
-# Validamos que la API no haya devuelto un mensaje de error interno
-if "errors" in data and data["errors"]:
-    print(f"❌ La API devolvió un error: {data['errors']}")
-    exit(1)
+# Inicializamos las características con 20 puntos (promedio estándar de la NFL)
+df['prom_puntos_local_anotados'] = 20.0
+df['prom_puntos_local_recibidos'] = 20.0
+df['prom_puntos_vis_anotados'] = 20.0
+df['prom_puntos_vis_recibidos'] = 20.0
 
-partidos_raw = data.get("response", [])
-
-if not partidos_raw:
-    print("⚠️ No se encontraron partidos para los parámetros establecidos.")
-    exit(0)
-
-print(f"📦 Datos descargados con éxito. Se encontraron {len(partidos_raw)} registros.")
-
-# =====================================================================
-# 3. LIMPIEZA Y ESTRUCTURACIÓN DE DATOS (DATA WRANGLING)
-# =====================================================================
-registros_limpios = []
-
-for partido in partidos_raw:
-    game_info = partido.get("game", {})
-    teams_info = partido.get("teams", {})
-    scores_info = partido.get("scores", {})
+print("🛠️ Calculando promedios móviles acumulados semana a semana...")
+for idx, row in df.iterrows():
+    loc = row['equipo_local']
+    vis = row['equipo_visitante']
     
-    # Extraer el número de la semana eliminando el texto (ej: "Regular Season - Week 5" -> 5)
-    semana_texto = game_info.get("week", "Week 1")
-    try:
-        semana = int(''.join(filter(str.isdigit, semana_texto)))
-    except ValueError:
-        semana = 1
+    # Asignamos el promedio que tenía el equipo ANTES de jugar este partido
+    if historial_anotados[loc]:
+        df.at[idx, 'prom_puntos_local_anotados'] = np.mean(historial_anotados[loc])
+        df.at[idx, 'prom_puntos_local_recibidos'] = np.mean(historial_recibidos[loc])
+    if historial_anotados[vis]:
+        df.at[idx, 'prom_puntos_vis_anotados'] = np.mean(historial_anotados[vis])
+        df.at[idx, 'prom_puntos_vis_recibidos'] = np.mean(historial_recibidos[vis])
+        
+    # Guardamos el resultado real de este partido para usarlo en las semanas siguientes
+    historial_anotados[loc].append(row['puntos_local'])
+    historial_recibidos[loc].append(row['puntos_visitante'])
+    
+    historial_anotados[vis].append(row['puntos_visitante'])
+    historial_recibidos[vis].append(row['puntos_local'])
 
-    registros_limpios.append({
-        "id_partido": game_info.get("id"),
-        "fecha": game_info.get("date"),
-        "semana": semana,
-        "estadio": game_info.get("venue", {}).get("name"),
-        "estado_partido": game_info.get("status", {}).get("short"), # "FT" significa terminado
-        "equipo_local": teams_info.get("home", {}).get("name"),
-        "equipo_visitante": teams_info.get("away", {}).get("name"),
-        "puntos_local": scores_info.get("home", {}).get("total"),
-        "puntos_visitante": scores_info.get("away", {}).get("total")
-    })
-
-# Convertimos la lista de diccionarios en un DataFrame de Pandas
-df_temporada = pd.DataFrame(registros_limpios)
-
-# Ordenamos cronológicamente por número de semana
-df_temporada = df_temporada.sort_values(by="semana").reset_index(drop=True)
+# Definimos la variable objetivo (Target): 1 = Ganó Local, 0 = Ganó Visitante
+df['gana_local'] = (df['puntos_local'] > df['puntos_visitante']).astype(int)
 
 # =====================================================================
-# 4. ALMACENAMIENTO LOCAL
+# 3. DIVISIÓN CRONOLÓGICA (EVITANDO DATA LEAKAGE)
 # =====================================================================
-archivo_salida = "temporada_2024_crudo.csv"
-df_temporada.to_csv(archivo_salida, index=False)
+# Entrenamos con el grueso de la temporada (Semanas 1 a 14)
+# Evaluamos la precisión con el cierre de la temporada (Semanas 15 a 18)
+df_train = df[df['semana'] <= 14]
+df_test = df[df['semana'] > 14]
 
-print(f"\n💾 ¡Proceso finalizado! Archivo '{archivo_salida}' guardado correctamente.")
-print(f"📊 Resumen de las primeras filas descargadas:\n")
-print(df_temporada[['semana', 'equipo_local', 'puntos_local', 'equipo_visitante', 'puntos_visitante']].head())
+caracteristicas = ['prom_puntos_local_anotados', 'prom_puntos_local_recibidos', 
+                   'prom_puntos_vis_anotados', 'prom_puntos_vis_recibidos']
+
+X_train = df_train[caracteristicas]
+y_train = df_train['gana_local']
+
+X_test = df_test[caracteristicas]
+y_test = df_test['gana_local']
+
+print(f"📊 Partidos para entrenamiento (Semanas 1-14): {len(X_train)}")
+print(f"📊 Partidos para evaluación (Semanas 15-18): {len(X_test)}")
+
+# =====================================================================
+# 4. ESCALADO DE VARIABLES Y ENTRENAMIENTO
+# =====================================================================
+escalador = StandardScaler()
+X_train_escalado = escalador.fit_transform(X_train)
+X_test_escalado = escalador.transform(X_test)
+
+modelo = LogisticRegression()
+modelo.fit(X_train_escalado, y_train)
+print("🎯 ¡Modelo de Regresión Logística entrenado con éxito!")
+
+# =====================================================================
+# 5. EVALUACIÓN DEL RENDIMIENTO DEL MODELO
+# =====================================================================
+predicciones = modelo.predict(X_test_escalado)
+precision = accuracy_score(y_test, predicciones)
+
+print(f"\n📈 ==================================================")
+print(f"   RENDIMIENTO DEL MODELO EN SEMANAS RESTRINGIDAS (15-18)")
+print(f"   Precisión Global (Accuracy): {precision:.2%}")
+print(f"==================================================\n")
+print("Reporte de Clasificación detallado:")
+print(classification_report(y_test, predicciones, target_names=['Gana Visitante', 'Gana Local']))
