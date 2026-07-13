@@ -5,8 +5,6 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_auc_score, roc_curve
 import joblib
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 # =====================================================================
 # 1. CARGAR DATOS DE AMBAS TEMPORADAS (2024 y 2025-2026)
@@ -107,11 +105,10 @@ df['gana_local'] = (df['puntos_local'] > df['puntos_visitante']).astype(int)
 print(f"✅ {len(df.columns)} características creadas")
 
 # =====================================================================
-# 4. ANÁLISIS DE CARACTERÍSTICAS
+# 4. SELECCIONAR CARACTERÍSTICAS Y LIMPIAR DATOS
 # =====================================================================
-print("\n📊 Análisis de correlación...")
+print("\n📊 Preparando datos para modelo...")
 
-# Seleccionar solo características numéricas
 caracteristicas = [
     'prom_puntos_local_anotados', 'prom_puntos_local_recibidos',
     'prom_puntos_vis_anotados', 'prom_puntos_vis_recibidos',
@@ -123,11 +120,20 @@ caracteristicas = [
     'ventaja_ofensiva', 'ventaja_defensiva', 'experiencia_relativa'
 ]
 
-X = df[caracteristicas].fillna(0)
+# Reemplazar NaN e infinitos con 0
+X = df[caracteristicas].fillna(0).replace([np.inf, -np.inf], 0)
 y = df['gana_local']
 
+print(f"✅ {len(caracteristicas)} características seleccionadas")
+print(f"✅ Datos limpios y normalizados")
+
+# =====================================================================
+# 5. ANÁLISIS DE CARACTERÍSTICAS
+# =====================================================================
+print("\n📊 Análisis de correlación...")
+
 # Correlación con el target
-correlaciones = X.corr().dot(y)
+correlaciones = pd.DataFrame(X).corrwith(y)
 correlaciones_abs = correlaciones.abs().sort_values(ascending=False)
 
 print("\nTop 10 características por correlación:")
@@ -135,7 +141,7 @@ for i, (feat, corr) in enumerate(correlaciones_abs.head(10).items(), 1):
     print(f"   {i}. {feat}: {corr:.4f}")
 
 # =====================================================================
-# 5. DIVISIÓN INTELIGENTE DE DATOS
+# 6. DIVISIÓN INTELIGENTE DE DATOS
 # =====================================================================
 print("\n📊 División de datos para entrenamiento...")
 
@@ -152,14 +158,14 @@ print(f"   - Entrenamiento: {len(X_train)} partidos (80%)")
 print(f"   - Evaluación: {len(X_test)} partidos (20%)")
 
 # =====================================================================
-# 6. ESCALADO (requerido para algunos modelos)
+# 7. ESCALADO (requerido para algunos modelos)
 # =====================================================================
 escalador = StandardScaler()
 X_train_escalado = escalador.fit_transform(X_train)
 X_test_escalado = escalador.transform(X_test)
 
 # =====================================================================
-# 7. ENTRENAMIENTO DE MÚLTIPLES MODELOS
+# 8. ENTRENAMIENTO DE MÚLTIPLES MODELOS
 # =====================================================================
 print("\n🤖 Entrenando múltiples modelos...")
 
@@ -194,7 +200,7 @@ gb_model.fit(X_train, y_train)
 modelos['Gradient Boosting'] = gb_model
 
 # =====================================================================
-# 8. EVALUACIÓN DE MODELOS
+# 9. EVALUACIÓN DE MODELOS
 # =====================================================================
 print("\n📈 ==================================================")
 print("   EVALUACIÓN DE MODELOS")
@@ -224,7 +230,7 @@ for nombre, modelo in modelos.items():
     print(f"🎯 {nombre}")
     print(f"   Accuracy: {accuracy:.2%}")
     print(f"   ROC-AUC: {roc_auc:.4f}")
-    print(f"   Reporte de Clasificación:")
+    print(f"\n   Reporte de Clasificación:")
     print(classification_report(y_test, predicciones, target_names=['Gana Visitante', 'Gana Local']))
     print()
     
@@ -234,14 +240,17 @@ for nombre, modelo in modelos.items():
         mejor_modelo = modelo
 
 # =====================================================================
-# 9. MATRIZ DE CONFUSIÓN DEL MEJOR MODELO
+# 10. INFORMACIÓN DEL MEJOR MODELO
 # =====================================================================
+print(f"\n{'='*70}")
 print(f"✅ MEJOR MODELO: {mejor_modelo_nombre}")
+print(f"{'='*70}")
 print(f"   Accuracy final: {mejor_accuracy:.2%}")
 print(f"   Mejora respecto a baseline (61.86%): +{(mejor_accuracy - 0.6186)*100:.2f}%")
+print(f"   ROC-AUC: {resultados[mejor_modelo_nombre]['roc_auc']:.4f}")
 
 # =====================================================================
-# 10. IMPORTANCIA DE CARACTERÍSTICAS (Feature Importance)
+# 11. IMPORTANCIA DE CARACTERÍSTICAS (Feature Importance)
 # =====================================================================
 print(f"\n🔍 Características más importantes en {mejor_modelo_nombre}:")
 
@@ -254,35 +263,38 @@ if hasattr(mejor_modelo, 'feature_importances_'):
         print(f"   {i}. {caracteristicas[idx]}: {importancias[idx]:.4f}")
 
 # =====================================================================
-# 11. GUARDAR MEJOR MODELO
+# 12. GUARDAR MEJOR MODELO
 # =====================================================================
 print(f"\n💾 Guardando el mejor modelo ({mejor_modelo_nombre})...")
 joblib.dump(mejor_modelo, 'mejor_modelo_predicciones.pkl')
 joblib.dump(escalador, 'escalador_predicciones.pkl')
+joblib.dump(caracteristicas, 'caracteristicas_modelo.pkl')
 print("   ✅ Archivos guardados:")
 print("      - mejor_modelo_predicciones.pkl")
 print("      - escalador_predicciones.pkl")
+print("      - caracteristicas_modelo.pkl")
 
 # =====================================================================
-# 12. RESUMEN FINAL
+# 13. RESUMEN FINAL
 # =====================================================================
-print(f"\n{'='*60}")
+print(f"\n{'='*70}")
 print("✅ RESUMEN DEL REENTRENAMIENTO OPTIMIZADO")
-print(f"{'='*60}")
+print(f"{'='*70}")
 print(f"📊 Datos:")
 print(f"   • Total de partidos: {len(df)}")
-print(f"   • Características ingeniería: {len(caracteristicas)}")
+print(f"   • Características creadas: {len(caracteristicas)}")
 print(f"\n🤖 Modelos entrenados:")
 for nombre, resultado in resultados.items():
     print(f"   • {nombre}: {resultado['accuracy']:.2%}")
 print(f"\n🏆 Mejor modelo: {mejor_modelo_nombre}")
-print(f"   Accuracy: {mejor_accuracy:.2%}")
-print(f"   ROC-AUC: {resultados[mejor_modelo_nombre]['roc_auc']:.4f}")
+print(f"   • Accuracy: {mejor_accuracy:.2%}")
+print(f"   • ROC-AUC: {resultados[mejor_modelo_nombre]['roc_auc']:.4f}")
+print(f"   • Mejora: +{(mejor_accuracy - 0.6186)*100:.2f}% vs baseline")
 print(f"\n🚀 El modelo está listo para predicciones en tiempo real!")
-print(f"{'='*60}\n")
+print(f"{'='*70}\n")
 
 # =====================================================================
-# 13. INSTRUCCIONES PARA USAR EL MODELO GUARDADO
+# 14. INSTRUCCIONES PARA USAR EL MODELO GUARDADO
 # =====================================================================
 print("📝 Para usar el modelo guardado en futuras predicciones:")
 print("""
@@ -291,8 +303,11 @@ print("""
     
     modelo = joblib.load('mejor_modelo_predicciones.pkl')
     escalador = joblib.load('escalador_predicciones.pkl')
+    caracteristicas = joblib.load('caracteristicas_modelo.pkl')
     
     # Preparar características igual que en entrenamiento
+    X_nuevo = df_nuevo[caracteristicas].fillna(0).replace([np.inf, -np.inf], 0)
+    
     prediccion = modelo.predict(X_nuevo)  # retorna 0 o 1
     probabilidades = modelo.predict_proba(X_nuevo)  # confianza
 """)
