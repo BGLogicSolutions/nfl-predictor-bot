@@ -4,7 +4,7 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, VotingClassifier
 from sklearn.model_selection import cross_val_score, StratifiedKFold
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score, classification_report, roc_auc_score, confusion_matrix
+from sklearn.metrics import accuracy_score, classification_report, roc_auc_score
 from sklearn.feature_selection import SelectKBest, f_classif
 import xgboost as xgb
 from catboost import CatBoostClassifier
@@ -14,7 +14,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # =====================================================================
-# 1. CARGAR DATOS DE AMBAS TEMPORADAS (2024 y 2025-2026)
+# 1. CARGAR DATOS DE TODAS LAS TEMPORADAS (2024 y 2025-2026)
 # =====================================================================
 archivo_2024 = "temporada_2024_crudo.csv"
 archivo_2025_2026 = "temporada_2025_2026_crudo.csv"
@@ -42,6 +42,8 @@ df = df.sort_values(by='semana').reset_index(drop=True)
 
 print(f"✅ Datos combinados exitosamente")
 print(f"🏈 Total de partidos procesados: {len(df)}")
+print(f"   - Temporada 2024: {len(df_2024)} partidos")
+print(f"   - Temporada 2025-2026: {len(df_2025_2026)} partidos")
 
 # =====================================================================
 # 3. INGENIERÍA AVANZADA DE CARACTERÍSTICAS
@@ -180,214 +182,217 @@ for i, feat in enumerate(caracteristicas, 1):
 X = pd.DataFrame(X_selected, columns=caracteristicas)
 
 # =====================================================================
-# 6. DIVISIÓN INTELIGENTE DE DATOS
+# 6. ESCALADO
 # =====================================================================
-print("\n📊 División de datos para entrenamiento...")
-
-punto_corte = int(0.8 * len(df))
-
-X_train = X.iloc[:punto_corte].reset_index(drop=True)
-y_train = y.iloc[:punto_corte].reset_index(drop=True)
-
-X_test = X.iloc[punto_corte:].reset_index(drop=True)
-y_test = y.iloc[punto_corte:].reset_index(drop=True)
-
-print(f"   - Entrenamiento: {len(X_train)} partidos (80%)")
-print(f"   - Evaluación: {len(X_test)} partidos (20%)")
-print(f"   - Balance entrenamiento: {y_train.mean():.2%} gana local")
-print(f"   - Balance evaluación: {y_test.mean():.2%} gana local")
-
-# =====================================================================
-# 7. ESCALADO
-# =====================================================================
+print("\n📊 Escalando características...")
 escalador = StandardScaler()
-X_train_escalado = escalador.fit_transform(X_train)
-X_test_escalado = escalador.transform(X_test)
+X_escalado = escalador.fit_transform(X)
+X = pd.DataFrame(X_escalado, columns=caracteristicas)
+
+print(f"✅ Datos escalados correctamente")
 
 # =====================================================================
-# 8. ENTRENAMIENTO DE MÚLTIPLES MODELOS AVANZADOS
+# 7. ENTRENAMIENTO DE MÚLTIPLES MODELOS CON TODOS LOS DATOS
 # =====================================================================
-print("\n🤖 Entrenando múltiples modelos avanzados...\n")
+print("\n🤖 Entrenando múltiples modelos con TODOS los datos...")
+print(f"   📊 Total de muestras: {len(X)}")
+print(f"   📊 Balance: {y.mean():.2%} gana local\n")
 
 modelos = {}
 
-# MODELO 1: XGBoost (muy poderoso)
+# MODELO 1: XGBoost
 print("   1. Entrenando XGBoost...")
 xgb_model = xgb.XGBClassifier(
-    n_estimators=300,
-    max_depth=6,
-    learning_rate=0.05,
+    n_estimators=400,
+    max_depth=7,
+    learning_rate=0.03,
     subsample=0.8,
     colsample_bytree=0.8,
     random_state=42,
     eval_metric='logloss',
     verbosity=0
 )
-xgb_model.fit(X_train, y_train)
+xgb_model.fit(X, y)
 modelos['XGBoost'] = xgb_model
 
-# MODELO 2: CatBoost (excelente con datos categóricos)
+# MODELO 2: CatBoost
 print("   2. Entrenando CatBoost...")
 cat_model = CatBoostClassifier(
-    iterations=300,
-    learning_rate=0.05,
-    depth=6,
+    iterations=400,
+    learning_rate=0.03,
+    depth=7,
     loss_function='Logloss',
     verbose=0,
     random_state=42
 )
-cat_model.fit(X_train, y_train)
+cat_model.fit(X, y)
 modelos['CatBoost'] = cat_model
 
-# MODELO 3: LightGBM (rápido y preciso)
+# MODELO 3: LightGBM
 print("   3. Entrenando LightGBM...")
 lgb_model = lgb.LGBMClassifier(
-    n_estimators=300,
-    max_depth=6,
-    learning_rate=0.05,
-    num_leaves=31,
+    n_estimators=400,
+    max_depth=7,
+    learning_rate=0.03,
+    num_leaves=63,
     subsample=0.8,
     colsample_bytree=0.8,
     random_state=42,
     verbose=-1
 )
-lgb_model.fit(X_train, y_train)
+lgb_model.fit(X, y)
 modelos['LightGBM'] = lgb_model
 
-# MODELO 4: Gradient Boosting con parámetros optimizados
-print("   4. Entrenando Gradient Boosting optimizado...")
+# MODELO 4: Gradient Boosting
+print("   4. Entrenando Gradient Boosting...")
 gb_model = GradientBoostingClassifier(
-    n_estimators=300,
-    learning_rate=0.05,
-    max_depth=5,
+    n_estimators=400,
+    learning_rate=0.03,
+    max_depth=6,
     min_samples_split=5,
     min_samples_leaf=2,
     subsample=0.8,
     random_state=42
 )
-gb_model.fit(X_train, y_train)
+gb_model.fit(X, y)
 modelos['Gradient Boosting'] = gb_model
 
+# MODELO 5: Random Forest
+print("   5. Entrenando Random Forest...")
+rf_model = RandomForestClassifier(
+    n_estimators=300,
+    max_depth=15,
+    min_samples_split=5,
+    min_samples_leaf=2,
+    random_state=42,
+    n_jobs=-1,
+    class_weight='balanced'
+)
+rf_model.fit(X, y)
+modelos['Random Forest'] = rf_model
+
 # =====================================================================
-# 9. EVALUACIÓN DE MODELOS INDIVIDUALES
+# 8. VALIDACIÓN CRUZADA ESTRATIFICADA (5-FOLD)
 # =====================================================================
 print("\n📈 ==================================================")
-print("   EVALUACIÓN DE MODELOS INDIVIDUALES")
+print("   VALIDACIÓN CRUZADA (5-FOLD STRATIFIED)")
 print("==================================================\n")
+
+skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+
+resultados = {}
+
+for nombre, modelo in modelos.items():
+    print(f"🎯 {nombre}")
+    
+    # Cross-validation scores
+    cv_scores = cross_val_score(modelo, X, y, cv=skf, scoring='accuracy')
+    
+    resultados[nombre] = {
+        'cv_scores': cv_scores,
+        'cv_mean': cv_scores.mean(),
+        'cv_std': cv_scores.std(),
+        'modelo': modelo
+    }
+    
+    print(f"   Scores (5-fold): {[f'{s:.2%}' for s in cv_scores]}")
+    print(f"   Media: {cv_scores.mean():.2%}")
+    print(f"   Std Dev: {cv_scores.std():.4f}")
+    print(f"   Min: {cv_scores.min():.2%} | Max: {cv_scores.max():.2%}")
+    print()
+
+# =====================================================================
+# 9. ENSEMBLE VOTING CON FIT
+# =====================================================================
+print("📊 Creando Ensemble Voting (XGBoost + CatBoost + LightGBM)...\n")
+
+voting_clf = VotingClassifier(
+    estimators=[
+        ('xgb', xgb_model),
+        ('cat', cat_model),
+        ('lgb', lgb_model)
+    ],
+    voting='soft'
+)
+
+# Entrenar ensemble
+voting_clf.fit(X, y)
+
+# Validación cruzada del ensemble
+print(f"🎯 ENSEMBLE VOTING")
+ensemble_cv_scores = cross_val_score(voting_clf, X, y, cv=skf, scoring='accuracy')
+
+resultados['Ensemble Voting'] = {
+    'cv_scores': ensemble_cv_scores,
+    'cv_mean': ensemble_cv_scores.mean(),
+    'cv_std': ensemble_cv_scores.std(),
+    'modelo': voting_clf
+}
+
+print(f"   Scores (5-fold): {[f'{s:.2%}' for s in ensemble_cv_scores]}")
+print(f"   Media: {ensemble_cv_scores.mean():.2%}")
+print(f"   Std Dev: {ensemble_cv_scores.std():.4f}")
+print(f"   Min: {ensemble_cv_scores.min():.2%} | Max: {ensemble_cv_scores.max():.2%}")
+print()
+
+# =====================================================================
+# 10. SELECCIONAR MEJOR MODELO
+# =====================================================================
+print("="*70)
+print("📊 RESUMEN DE RESULTADOS")
+print("="*70 + "\n")
 
 mejor_accuracy = 0
 mejor_modelo_nombre = ""
 mejor_modelo = None
 
-resultados = {}
+print("🏆 Ranking de modelos por Accuracy (5-fold CV):\n")
+ranked = sorted(resultados.items(), key=lambda x: x[1]['cv_mean'], reverse=True)
 
-for nombre, modelo in modelos.items():
-    predicciones = modelo.predict(X_test)
-    accuracy = accuracy_score(y_test, predicciones)
+for i, (nombre, data) in enumerate(ranked, 1):
+    print(f"   {i}. {nombre}")
+    print(f"      Accuracy: {data['cv_mean']:.2%} (±{data['cv_std']:.2%})")
     
-    predicciones_proba = modelo.predict_proba(X_test)[:, 1]
-    roc_auc = roc_auc_score(y_test, predicciones_proba)
-    
-    resultados[nombre] = {
-        'accuracy': accuracy,
-        'roc_auc': roc_auc,
-        'predicciones': predicciones,
-        'probabilidades': predicciones_proba,
-        'modelo': modelo
-    }
-    
-    print(f"🎯 {nombre}")
-    print(f"   Accuracy: {accuracy:.2%}")
-    print(f"   ROC-AUC: {roc_auc:.4f}")
-    print()
-    
-    if accuracy > mejor_accuracy:
-        mejor_accuracy = accuracy
+    if data['cv_mean'] > mejor_accuracy:
+        mejor_accuracy = data['cv_mean']
         mejor_modelo_nombre = nombre
-        mejor_modelo = modelo
+        mejor_modelo = data['modelo']
 
-# =====================================================================
-# 10. ENSEMBLE VOTING - COMBINAR MEJORES MODELOS
-# =====================================================================
-print("📊 Creando Ensemble Voting con mejores modelos...\n")
-
-# Usar los 3 mejores modelos en voting
-voting_clf = VotingClassifier(
-    estimators=[
-        ('xgb', modelos['XGBoost']),
-        ('cat', modelos['CatBoost']),
-        ('lgb', modelos['LightGBM'])
-    ],
-    voting='soft'
-)
-
-predicciones_ensemble = voting_clf.predict(X_test)
-accuracy_ensemble = accuracy_score(y_test, predicciones_ensemble)
-
-probabilidades_ensemble = voting_clf.predict_proba(X_test)[:, 1]
-roc_auc_ensemble = roc_auc_score(y_test, probabilidades_ensemble)
-
-print(f"🎯 ENSEMBLE VOTING (XGBoost + CatBoost + LightGBM)")
-print(f"   Accuracy: {accuracy_ensemble:.2%}")
-print(f"   ROC-AUC: {roc_auc_ensemble:.4f}")
-print()
-
-if accuracy_ensemble > mejor_accuracy:
-    mejor_accuracy = accuracy_ensemble
-    mejor_modelo_nombre = "Ensemble Voting"
-    mejor_modelo = voting_clf
-    resultados['Ensemble Voting'] = {
-        'accuracy': accuracy_ensemble,
-        'roc_auc': roc_auc_ensemble,
-        'predicciones': predicciones_ensemble,
-        'probabilidades': probabilidades_ensemble,
-        'modelo': voting_clf
-    }
-
-# =====================================================================
-# 11. VALIDACIÓN CRUZADA DEL MEJOR MODELO
-# =====================================================================
-print("📊 ==================================================")
-print("   VALIDACIÓN CRUZADA DEL MEJOR MODELO")
-print("==================================================\n")
-
-skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-cv_scores = cross_val_score(mejor_modelo, X_train, y_train, cv=skf, scoring='accuracy')
-
-print(f"🎯 {mejor_modelo_nombre}")
-print(f"   Scores CV (5-fold): {cv_scores}")
-print(f"   Media: {cv_scores.mean():.2%}")
-print(f"   Std Dev: {cv_scores.std():.4f}")
-print(f"   Min: {cv_scores.min():.2%}")
-print(f"   Max: {cv_scores.max():.2%}")
-
-# =====================================================================
-# 12. REPORTE FINAL
-# =====================================================================
 print(f"\n{'='*70}")
-print("📊 REPORTE DE CLASIFICACIÓN - MEJOR MODELO")
+print(f"✅ MEJOR MODELO: {mejor_modelo_nombre}")
+print(f"   Accuracy CV: {mejor_accuracy:.2%}")
+print(f"   Mejora vs baseline (61.86%): +{(mejor_accuracy - 0.6186)*100:.2f}%")
 print(f"{'='*70}\n")
 
-print(classification_report(y_test, resultados[mejor_modelo_nombre]['predicciones'], 
-                          target_names=['Gana Visitante', 'Gana Local']))
+# =====================================================================
+# 11. IMPORTANCIA DE CARACTERÍSTICAS
+# =====================================================================
+print("🔍 Características más importantes en el mejor modelo:\n")
 
-print("\n" + "="*70)
-print("✅ RESUMEN FINAL DEL REENTRENAMIENTO")
-print("="*70)
-print(f"📊 Datos:")
-print(f"   • Total de partidos: {len(df)}")
-print(f"   • Características después de Feature Selection: {len(caracteristicas)}")
-print(f"\n🤖 Modelos individuales entrenados:")
-for nombre, resultado in resultados.items():
-    if nombre != 'Ensemble Voting':
-        print(f"   • {nombre}: {resultado['accuracy']:.2%}")
+if hasattr(mejor_modelo, 'feature_importances_'):
+    importancias = mejor_modelo.feature_importances_
+elif hasattr(mejor_modelo, 'get_feature_importance'):
+    importancias = mejor_modelo.get_feature_importance()
+else:
+    # Para Voting, usar el primer estimador
+    try:
+        importancias = mejor_modelo.estimators_[0].feature_importances_
+    except:
+        importancias = None
 
-print(f"\n🏆 MEJOR MODELO: {mejor_modelo_nombre}")
-print(f"   • Accuracy: {mejor_accuracy:.2%}")
-print(f"   • ROC-AUC: {resultados[mejor_modelo_nombre]['roc_auc']:.4f}")
-print(f"   • Mejora vs baseline (61.86%): +{(mejor_accuracy - 0.6186)*100:.2f}%")
-print(f"\n💾 Guardando modelo...")
+if importancias is not None:
+    indices_ordenados = np.argsort(importancias)[::-1]
+    
+    print("   Top 10 características:")
+    for i, idx in enumerate(indices_ordenados[:10], 1):
+        print(f"   {i}. {caracteristicas[idx]}: {importancias[idx]:.4f}")
+else:
+    print("   (Feature importance no disponible para este modelo)")
 
+# =====================================================================
+# 12. GUARDAR MODELO
+# =====================================================================
+print(f"\n💾 Guardando mejor modelo ({mejor_modelo_nombre})...")
 joblib.dump(mejor_modelo, 'mejor_modelo_predicciones.pkl')
 joblib.dump(escalador, 'escalador_predicciones.pkl')
 joblib.dump(caracteristicas, 'caracteristicas_modelo.pkl')
@@ -397,5 +402,24 @@ print("      - mejor_modelo_predicciones.pkl")
 print("      - escalador_predicciones.pkl")
 print("      - caracteristicas_modelo.pkl")
 
-print(f"\n🚀 ¡El modelo optimizado está listo para producción!")
-print("="*70 + "\n")
+# =====================================================================
+# 13. RESUMEN FINAL
+# =====================================================================
+print(f"\n{'='*70}")
+print("✅ RESUMEN FINAL DEL REENTRENAMIENTO")
+print(f"{'='*70}")
+print(f"\n📊 Datos:")
+print(f"   • Total de partidos: {len(df)}")
+print(f"   • Temporada 2024: {len(df_2024)}")
+print(f"   • Temporada 2025-2026: {len(df_2025_2026)}")
+print(f"   • Características iniciales: {len(todas_caracteristicas)}")
+print(f"   • Características después de SelectKBest: {len(caracteristicas)}")
+print(f"\n🤖 Modelos entrenados:")
+for nombre, data in ranked:
+    print(f"   • {nombre}: {data['cv_mean']:.2%}")
+print(f"\n🏆 MEJOR MODELO: {mejor_modelo_nombre}")
+print(f"   • Accuracy (5-fold CV): {mejor_accuracy:.2%}")
+print(f"   • Desviación estándar: ±{resultados[mejor_modelo_nombre]['cv_std']:.2%}")
+print(f"   • Mejora vs baseline: +{(mejor_accuracy - 0.6186)*100:.2f}%")
+print(f"\n🚀 ¡El modelo está listo para predicciones en producción!")
+print(f"{'='*70}\n")
