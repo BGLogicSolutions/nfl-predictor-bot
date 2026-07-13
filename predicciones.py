@@ -5,7 +5,6 @@ import pandas as pd
 # =====================================================================
 # 1. AUTENTICACIÓN CON LA API
 # =====================================================================
-# El token se lee de forma segura desde los secretos de GitHub Actions
 API_KEY = os.environ.get("API_SPORTS_KEY")
 
 if not API_KEY:
@@ -20,16 +19,16 @@ HEADERS = {
 }
 PARAMS = {
     "league": "1",    # ID 1 corresponde a la NFL
-    "season": "2025"   # Temporada pasada completa
+    "season": "2024"   # Temporada completa disponible en el plan gratuito
 }
 
 # =====================================================================
 # 2. PETICIÓN Y DESCARGA
 # =====================================================================
-print("🚀 Conectando con API-Sports para descargar la temporada NFL 2025...")
+print("🚀 Conectando con API-Sports para descargar la temporada NFL 2024...")
 try:
     response = requests.get(URL, headers=HEADERS, params=PARAMS)
-    response.raise_for_status()  # Lanza un error si la respuesta HTTP es incorrecta
+    response.raise_for_status()  
     data = response.json()
 except Exception as e:
     print(f"❌ Error crítico en la conexión: {e}")
@@ -86,7 +85,7 @@ df_temporada = df_temporada.sort_values(by="semana").reset_index(drop=True)
 # =====================================================================
 # 4. ALMACENAMIENTO LOCAL
 # =====================================================================
-archivo_salida = "temporada_2025_crudo.csv"
+archivo_salida = "temporada_2024_crudo.csv"
 df_temporada.to_csv(archivo_salida, index=False)
 
 print(f"\n💾 ¡Proceso finalizado! Archivo '{archivo_salida}' guardado correctamente.")
