@@ -1,0 +1,273 @@
+id_partido,semana,equipo_local,equipo_visitante,puntos_local,puntos_visitante
+401772510,1,Philadelphia Eagles,Dallas Cowboys,24,20
+401772714,1,Los Angeles Chargers,Kansas City Chiefs,27,21
+401772830,1,Atlanta Falcons,Tampa Bay Buccaneers,20,23
+401772829,1,Cleveland Browns,Cincinnati Bengals,16,17
+401772719,1,Indianapolis Colts,Miami Dolphins,33,8
+401772720,1,New England Patriots,Las Vegas Raiders,13,20
+401772718,1,New Orleans Saints,Arizona Cardinals,13,20
+401772721,1,New York Jets,Pittsburgh Steelers,32,34
+401772827,1,Washington Commanders,New York Giants,21,6
+401772828,1,Jacksonville Jaguars,Carolina Panthers,26,10
+401772832,1,Denver Broncos,Tennessee Titans,20,12
+401772831,1,Seattle Seahawks,San Francisco 49ers,13,17
+401772722,1,Green Bay Packers,Detroit Lions,27,13
+401772723,1,Los Angeles Rams,Houston Texans,14,9
+401772918,1,Buffalo Bills,Baltimore Ravens,41,40
+401772810,1,Chicago Bears,Minnesota Vikings,24,27
+401772936,2,Green Bay Packers,Washington Commanders,27,18
+401772725,2,Cincinnati Bengals,Jacksonville Jaguars,31,27
+401772834,2,Dallas Cowboys,New York Giants,40,37
+401772835,2,Detroit Lions,Chicago Bears,52,21
+401772724,2,Tennessee Titans,Los Angeles Rams,19,33
+401772728,2,Miami Dolphins,New England Patriots,27,33
+401772833,2,New Orleans Saints,San Francisco 49ers,21,26
+401772727,2,New York Jets,Buffalo Bills,10,30
+401772836,2,Pittsburgh Steelers,Seattle Seahawks,17,31
+401772726,2,Baltimore Ravens,Cleveland Browns,41,17
+401772729,2,Indianapolis Colts,Denver Broncos,29,28
+401772730,2,Arizona Cardinals,Carolina Panthers,27,22
+401772837,2,Kansas City Chiefs,Philadelphia Eagles,17,20
+401772919,2,Minnesota Vikings,Atlanta Falcons,6,22
+401772715,2,Houston Texans,Tampa Bay Buccaneers,19,20
+401772811,2,Las Vegas Raiders,Los Angeles Chargers,9,20
+401772937,3,Buffalo Bills,Miami Dolphins,31,21
+401772842,3,Cleveland Browns,Green Bay Packers,13,10
+401772733,3,Tennessee Titans,Indianapolis Colts,20,41
+401772731,3,Minnesota Vikings,Cincinnati Bengals,48,10
+401772732,3,New England Patriots,Pittsburgh Steelers,14,21
+401772839,3,Philadelphia Eagles,Los Angeles Rams,33,26
+401772840,3,Tampa Bay Buccaneers,New York Jets,29,27
+401772841,3,Washington Commanders,Las Vegas Raiders,41,24
+401772838,3,Carolina Panthers,Atlanta Falcons,30,0
+401772734,3,Jacksonville Jaguars,Houston Texans,17,10
+401772735,3,Los Angeles Chargers,Denver Broncos,23,20
+401772736,3,Seattle Seahawks,New Orleans Saints,44,13
+401772844,3,Chicago Bears,Dallas Cowboys,31,14
+401772843,3,San Francisco 49ers,Arizona Cardinals,16,15
+401772920,3,New York Giants,Kansas City Chiefs,9,22
+401772812,3,Baltimore Ravens,Detroit Lions,30,38
+401772938,4,Arizona Cardinals,Seattle Seahawks,20,23
+401772632,4,Pittsburgh Steelers,Minnesota Vikings,24,21
+401772739,4,Atlanta Falcons,Washington Commanders,34,27
+401772740,4,Buffalo Bills,New Orleans Saints,31,19
+401772846,4,Detroit Lions,Cleveland Browns,34,10
+401772847,4,New England Patriots,Carolina Panthers,42,13
+401772737,4,New York Giants,Los Angeles Chargers,21,18
+401772845,4,Tampa Bay Buccaneers,Philadelphia Eagles,25,31
+401772738,4,Houston Texans,Tennessee Titans,26,0
+401772849,4,Los Angeles Rams,Indianapolis Colts,27,20
+401772848,4,San Francisco 49ers,Jacksonville Jaguars,21,26
+401772741,4,Kansas City Chiefs,Baltimore Ravens,37,20
+401772742,4,Las Vegas Raiders,Chicago Bears,24,25
+401772921,4,Dallas Cowboys,Green Bay Packers,40,40
+401772813,4,Miami Dolphins,New York Jets,27,21
+401772716,4,Denver Broncos,Cincinnati Bengals,28,3
+401772939,5,Los Angeles Rams,San Francisco 49ers,23,26
+401772633,5,Cleveland Browns,Minnesota Vikings,17,21
+401772851,5,Indianapolis Colts,Las Vegas Raiders,40,6
+401772744,5,New Orleans Saints,New York Giants,26,14
+401772850,5,New York Jets,Dallas Cowboys,22,37
+401772745,5,Philadelphia Eagles,Denver Broncos,17,21
+401772852,5,Carolina Panthers,Miami Dolphins,27,24
+401772743,5,Baltimore Ravens,Houston Texans,10,44
+401772747,5,Arizona Cardinals,Tennessee Titans,21,22
+401772746,5,Seattle Seahawks,Tampa Bay Buccaneers,35,38
+401772854,5,Cincinnati Bengals,Detroit Lions,24,37
+401772853,5,Los Angeles Chargers,Washington Commanders,10,27
+401772922,5,Buffalo Bills,New England Patriots,20,23
+401772814,5,Jacksonville Jaguars,Kansas City Chiefs,31,28
+401772940,6,New York Giants,Philadelphia Eagles,34,17
+401772634,6,New York Jets,Denver Broncos,11,13
+401772856,6,Indianapolis Colts,Arizona Cardinals,31,27
+401772750,6,Miami Dolphins,Los Angeles Chargers,27,29
+401772751,6,New Orleans Saints,New England Patriots,19,25
+401772748,6,Pittsburgh Steelers,Cleveland Browns,23,9
+401772858,6,Carolina Panthers,Dallas Cowboys,30,27
+401772857,6,Jacksonville Jaguars,Seattle Seahawks,12,20
+401772855,6,Baltimore Ravens,Los Angeles Rams,3,17
+401772859,6,Las Vegas Raiders,Tennessee Titans,20,10
+401772752,6,Green Bay Packers,Cincinnati Bengals,27,18
+401772749,6,Tampa Bay Buccaneers,San Francisco 49ers,30,19
+401772923,6,Kansas City Chiefs,Detroit Lions,30,17
+401772815,6,Atlanta Falcons,Buffalo Bills,24,14
+401772717,6,Washington Commanders,Chicago Bears,24,25
+401772941,7,Cincinnati Bengals,Pittsburgh Steelers,33,31
+401772635,7,Jacksonville Jaguars,Los Angeles Rams,7,35
+401772861,7,Chicago Bears,New Orleans Saints,26,14
+401772754,7,Cleveland Browns,Miami Dolphins,31,6
+401772755,7,Tennessee Titans,New England Patriots,13,31
+401772753,7,Kansas City Chiefs,Las Vegas Raiders,31,0
+401772862,7,Minnesota Vikings,Philadelphia Eagles,22,28
+401772860,7,New York Jets,Carolina Panthers,6,13
+401772757,7,Denver Broncos,New York Giants,33,32
+401772756,7,Los Angeles Chargers,Indianapolis Colts,24,38
+401772864,7,Dallas Cowboys,Washington Commanders,44,22
+401772863,7,Arizona Cardinals,Green Bay Packers,23,27
+401772924,7,San Francisco 49ers,Atlanta Falcons,20,10
+401772816,7,Detroit Lions,Tampa Bay Buccaneers,24,9
+401772826,7,Seattle Seahawks,Houston Texans,27,19
+401772942,8,Los Angeles Chargers,Minnesota Vikings,37,10
+401772760,8,Atlanta Falcons,Miami Dolphins,10,34
+401772758,8,Cincinnati Bengals,New York Jets,38,39
+401772868,8,New England Patriots,Cleveland Browns,32,13
+401772867,8,Philadelphia Eagles,New York Giants,38,20
+401772865,8,Carolina Panthers,Buffalo Bills,9,40
+401772759,8,Baltimore Ravens,Chicago Bears,30,16
+401772866,8,Houston Texans,San Francisco 49ers,26,15
+401772869,8,New Orleans Saints,Tampa Bay Buccaneers,3,23
+401772762,8,Denver Broncos,Dallas Cowboys,44,24
+401772761,8,Indianapolis Colts,Tennessee Titans,38,14
+401772925,8,Pittsburgh Steelers,Green Bay Packers,25,35
+401772817,8,Kansas City Chiefs,Washington Commanders,28,7
+401772943,9,Miami Dolphins,Baltimore Ravens,6,28
+401772765,9,Cincinnati Bengals,Chicago Bears,42,47
+401772871,9,Detroit Lions,Minnesota Vikings,24,27
+401772872,9,Green Bay Packers,Carolina Panthers,13,16
+401772764,9,Tennessee Titans,Los Angeles Chargers,20,27
+401772763,9,New England Patriots,Atlanta Falcons,24,23
+401772767,9,New York Giants,San Francisco 49ers,24,34
+401772766,9,Pittsburgh Steelers,Indianapolis Colts,27,20
+401772870,9,Houston Texans,Denver Broncos,15,18
+401772873,9,Las Vegas Raiders,Jacksonville Jaguars,29,30
+401772874,9,Los Angeles Rams,New Orleans Saints,34,10
+401772768,9,Buffalo Bills,Kansas City Chiefs,28,21
+401772926,9,Washington Commanders,Seattle Seahawks,14,38
+401772818,9,Dallas Cowboys,Arizona Cardinals,17,27
+401772944,10,Denver Broncos,Las Vegas Raiders,10,7
+401772636,10,Indianapolis Colts,Atlanta Falcons,31,25
+401772875,10,Chicago Bears,New York Giants,24,20
+401772771,10,Miami Dolphins,Buffalo Bills,30,13
+401772876,10,Minnesota Vikings,Baltimore Ravens,19,27
+401772769,10,New York Jets,Cleveland Browns,27,20
+401772772,10,Tampa Bay Buccaneers,New England Patriots,23,28
+401772877,10,Carolina Panthers,New Orleans Saints,7,17
+401772770,10,Houston Texans,Jacksonville Jaguars,36,29
+401772773,10,Seattle Seahawks,Arizona Cardinals,44,22
+401772879,10,San Francisco 49ers,Los Angeles Rams,26,42
+401772878,10,Washington Commanders,Detroit Lions,22,44
+401772927,10,Los Angeles Chargers,Pittsburgh Steelers,25,10
+401772630,10,Green Bay Packers,Philadelphia Eagles,7,10
+401772945,11,New England Patriots,New York Jets,27,14
+401772631,11,Miami Dolphins,Washington Commanders,16,13
+401772882,11,Atlanta Falcons,Carolina Panthers,27,30
+401772776,11,Buffalo Bills,Tampa Bay Buccaneers,44,32
+401772881,11,Tennessee Titans,Houston Texans,13,16
+401772880,11,Minnesota Vikings,Chicago Bears,17,19
+401772883,11,New York Giants,Green Bay Packers,20,27
+401772774,11,Pittsburgh Steelers,Cincinnati Bengals,34,12
+401772775,11,Jacksonville Jaguars,Los Angeles Chargers,35,6
+401772884,11,Los Angeles Rams,Seattle Seahawks,21,19
+401772885,11,Arizona Cardinals,San Francisco 49ers,22,41
+401772777,11,Cleveland Browns,Baltimore Ravens,16,23
+401772778,11,Denver Broncos,Kansas City Chiefs,22,19
+401772928,11,Philadelphia Eagles,Detroit Lions,16,9
+401772819,11,Las Vegas Raiders,Dallas Cowboys,16,33
+401772946,12,Houston Texans,Buffalo Bills,23,19
+401772780,12,Chicago Bears,Pittsburgh Steelers,31,28
+401772781,12,Cincinnati Bengals,New England Patriots,20,26
+401772888,12,Detroit Lions,New York Giants,34,27
+401772887,12,Green Bay Packers,Minnesota Vikings,23,6
+401772886,12,Tennessee Titans,Seattle Seahawks,24,30
+401772779,12,Kansas City Chiefs,Indianapolis Colts,23,20
+401772782,12,Baltimore Ravens,New York Jets,23,10
+401772784,12,Las Vegas Raiders,Cleveland Browns,10,24
+401772783,12,Arizona Cardinals,Jacksonville Jaguars,24,27
+401772890,12,Dallas Cowboys,Philadelphia Eagles,24,21
+401772889,12,New Orleans Saints,Atlanta Falcons,10,24
+401772929,12,Los Angeles Rams,Tampa Bay Buccaneers,34,7
+401772820,12,San Francisco 49ers,Carolina Panthers,20,9
+401772891,13,Detroit Lions,Green Bay Packers,24,31
+401772694,13,Dallas Cowboys,Kansas City Chiefs,31,28
+401772930,13,Baltimore Ravens,Cincinnati Bengals,14,32
+401772621,13,Philadelphia Eagles,Chicago Bears,15,24
+401772785,13,Cleveland Browns,San Francisco 49ers,8,26
+401772786,13,Tennessee Titans,Jacksonville Jaguars,3,25
+401772787,13,Indianapolis Colts,Houston Texans,16,20
+401772892,13,Miami Dolphins,New Orleans Saints,21,17
+401772893,13,New York Jets,Atlanta Falcons,27,24
+401772895,13,Tampa Bay Buccaneers,Arizona Cardinals,20,17
+401772894,13,Carolina Panthers,Los Angeles Rams,31,28
+401772896,13,Seattle Seahawks,Minnesota Vikings,26,0
+401772789,13,Pittsburgh Steelers,Buffalo Bills,7,26
+401772788,13,Los Angeles Chargers,Las Vegas Raiders,31,14
+401772931,13,Washington Commanders,Denver Broncos,26,27
+401772821,13,New England Patriots,New York Giants,33,15
+401772947,14,Detroit Lions,Dallas Cowboys,44,30
+401772900,14,Atlanta Falcons,Seattle Seahawks,9,37
+401772902,14,Buffalo Bills,Cincinnati Bengals,39,34
+401772898,14,Cleveland Browns,Tennessee Titans,29,31
+401772899,14,Minnesota Vikings,Washington Commanders,31,0
+401772790,14,New York Jets,Miami Dolphins,10,34
+401772792,14,Tampa Bay Buccaneers,New Orleans Saints,20,24
+401772793,14,Jacksonville Jaguars,Indianapolis Colts,36,19
+401772791,14,Baltimore Ravens,Pittsburgh Steelers,22,27
+401772794,14,Las Vegas Raiders,Denver Broncos,17,24
+401772897,14,Green Bay Packers,Chicago Bears,28,21
+401772901,14,Arizona Cardinals,Los Angeles Rams,17,45
+401772932,14,Kansas City Chiefs,Houston Texans,10,20
+401772822,14,Los Angeles Chargers,Philadelphia Eagles,22,19
+401772948,15,Tampa Bay Buccaneers,Atlanta Falcons,28,29
+401772904,15,Chicago Bears,Cleveland Browns,31,3
+401772796,15,Cincinnati Bengals,Baltimore Ravens,0,24
+401772798,15,Kansas City Chiefs,Los Angeles Chargers,13,16
+401772795,15,New England Patriots,Buffalo Bills,31,35
+401772905,15,New York Giants,Washington Commanders,21,29
+401772906,15,Philadelphia Eagles,Las Vegas Raiders,31,0
+401772797,15,Jacksonville Jaguars,New York Jets,48,20
+401772903,15,Houston Texans,Arizona Cardinals,40,20
+401772800,15,Denver Broncos,Green Bay Packers,34,26
+401772909,15,Los Angeles Rams,Detroit Lions,41,34
+401772908,15,New Orleans Saints,Carolina Panthers,20,17
+401772907,15,San Francisco 49ers,Tennessee Titans,37,24
+401772799,15,Seattle Seahawks,Indianapolis Colts,18,16
+401772933,15,Dallas Cowboys,Minnesota Vikings,26,34
+401772823,15,Pittsburgh Steelers,Miami Dolphins,28,15
+401772949,16,Seattle Seahawks,Los Angeles Rams,38,37
+401772612,16,Washington Commanders,Philadelphia Eagles,18,29
+401772613,16,Chicago Bears,Green Bay Packers,22,16
+401772802,16,Cleveland Browns,Buffalo Bills,20,23
+401772910,16,Dallas Cowboys,Los Angeles Chargers,17,34
+401772803,16,Tennessee Titans,Kansas City Chiefs,26,9
+401772934,16,Miami Dolphins,Cincinnati Bengals,21,45
+401772801,16,New Orleans Saints,New York Jets,29,6
+401772911,16,New York Giants,Minnesota Vikings,13,16
+401772912,16,Carolina Panthers,Tampa Bay Buccaneers,23,20
+401772913,16,Denver Broncos,Jacksonville Jaguars,20,34
+401772914,16,Arizona Cardinals,Atlanta Falcons,19,26
+401772806,16,Detroit Lions,Pittsburgh Steelers,24,29
+401772805,16,Houston Texans,Las Vegas Raiders,23,21
+401772804,16,Baltimore Ravens,New England Patriots,24,28
+401772824,16,Indianapolis Colts,San Francisco 49ers,27,48
+401772710,17,Washington Commanders,Dallas Cowboys,23,30
+401772711,17,Minnesota Vikings,Detroit Lions,23,10
+401772622,17,Kansas City Chiefs,Denver Broncos,13,20
+401772951,17,Los Angeles Chargers,Houston Texans,16,20
+401772953,17,Green Bay Packers,Baltimore Ravens,24,41
+401772954,17,Cincinnati Bengals,Arizona Cardinals,37,14
+401772807,17,Cleveland Browns,Pittsburgh Steelers,13,6
+401772809,17,Tennessee Titans,New Orleans Saints,26,34
+401772915,17,Indianapolis Colts,Jacksonville Jaguars,17,23
+401772916,17,Miami Dolphins,Tampa Bay Buccaneers,20,17
+401772808,17,New York Jets,New England Patriots,10,42
+401772952,17,Carolina Panthers,Seattle Seahawks,10,27
+401772950,17,Las Vegas Raiders,New York Giants,10,34
+401772917,17,Buffalo Bills,Philadelphia Eagles,12,13
+401772935,17,San Francisco 49ers,Chicago Bears,42,38
+401772825,17,Atlanta Falcons,Los Angeles Rams,27,24
+401772969,18,Tampa Bay Buccaneers,Carolina Panthers,16,14
+401772961,18,San Francisco 49ers,Seattle Seahawks,3,13
+401772966,18,Atlanta Falcons,New Orleans Saints,19,17
+401772964,18,Cincinnati Bengals,Cleveland Browns,18,20
+401772968,18,Minnesota Vikings,Green Bay Packers,16,3
+401772963,18,New York Giants,Dallas Cowboys,34,17
+401772970,18,Jacksonville Jaguars,Tennessee Titans,41,7
+401772962,18,Houston Texans,Indianapolis Colts,38,30
+401772967,18,Buffalo Bills,New York Jets,35,8
+401772965,18,Chicago Bears,Detroit Lions,16,19
+401772956,18,Denver Broncos,Los Angeles Chargers,19,3
+401772957,18,Las Vegas Raiders,Kansas City Chiefs,14,12
+401772955,18,Los Angeles Rams,Arizona Cardinals,37,20
+401772958,18,New England Patriots,Miami Dolphins,38,10
+401772959,18,Philadelphia Eagles,Washington Commanders,17,24
+401772960,18,Pittsburgh Steelers,Baltimore Ravens,26,24
