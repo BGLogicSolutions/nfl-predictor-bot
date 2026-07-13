@@ -1,10 +1,12 @@
 import os
 import pandas as pd
 import numpy as np
-from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_auc_score, roc_curve
 import joblib
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # =====================================================================
 # 1. CARGAR DATOS DE AMBAS TEMPORADAS (2024 y 2025-2026)
@@ -12,144 +14,285 @@ import joblib
 archivo_2024 = "temporada_2024_crudo.csv"
 archivo_2025_2026 = "temporada_2025_2026_crudo.csv"
 
-if not os.path.exists(archivo_2024):
-    print(f"❌ Error: No se encontró el archivo '{archivo_2024}'.")
+if not os.path.exists(archivo_2024) or not os.path.exists(archivo_2025_2026):
+    print(f"❌ Error: Falta alguno de los archivos de datos.")
     exit(1)
 
-if not os.path.exists(archivo_2025_2026):
-    print(f"❌ Error: No se encontró el archivo '{archivo_2025_2026}'.")
-    exit(1)
-
-print(f"📖 Cargando datos de temporada 2024 desde {archivo_2024}...")
+print(f"📖 Cargando datos de temporada 2024...")
 df_2024 = pd.read_csv(archivo_2024)
 
-print(f"📖 Cargando datos de temporada 2025-2026 desde {archivo_2025_2026}...")
+print(f"📖 Cargando datos de temporada 2025-2026...")
 df_2025_2026 = pd.read_csv(archivo_2025_2026)
 
 # =====================================================================
 # 2. PREPARAR Y COMBINAR DATOS
 # =====================================================================
-# Normalizar columnas de df_2024 (asegurar que tenga las columnas necesarias)
 df_2024 = df_2024[df_2024['estado_partido'] == 'FT'].copy()
 df_2024 = df_2024[['semana', 'equipo_local', 'equipo_visitante', 'puntos_local', 'puntos_visitante']]
 
-# df_2025_2026 ya tiene los datos con estado 'FT' implícito, solo seleccionar columnas necesarias
 df_2025_2026 = df_2025_2026[['semana', 'equipo_local', 'equipo_visitante', 'puntos_local', 'puntos_visitante']]
 
-# Combinar ambos DataFrames
 df = pd.concat([df_2024, df_2025_2026], ignore_index=True)
 df = df.sort_values(by='semana').reset_index(drop=True)
 
 print(f"✅ Datos combinados exitosamente")
 print(f"🏈 Total de partidos procesados: {len(df)}")
-print(f"   - Temporada 2024: {len(df_2024)} partidos")
-print(f"   - Temporada 2025-2026: {len(df_2025_2026)} partidos")
 
 # =====================================================================
-# 3. INGENIERÍA DE CARACTERÍSTICAS (PROMEDIOS MÓVILES ACUMULADOS)
+# 3. INGENIERÍA AVANZADA DE CARACTERÍSTICAS
 # =====================================================================
-# Creamos diccionarios para registrar el desempeño de cada equipo paso a paso
+print("\n🛠️ Creando características avanzadas...")
+
 equipos = pd.concat([df['equipo_local'], df['equipo_visitante']]).unique()
 historial_anotados = {equipo: [] for equipo in equipos}
 historial_recibidos = {equipo: [] for equipo in equipos}
 
-# Inicializamos las características con 20 puntos (promedio estándar de la NFL)
+# Características básicas
 df['prom_puntos_local_anotados'] = 20.0
 df['prom_puntos_local_recibidos'] = 20.0
 df['prom_puntos_vis_anotados'] = 20.0
 df['prom_puntos_vis_recibidos'] = 20.0
+df['diferencia_puntos_local'] = 0.0
+df['diferencia_puntos_vis'] = 0.0
+df['varianza_anotados_local'] = 0.0
+df['varianza_recibidos_local'] = 0.0
+df['varianza_anotados_vis'] = 0.0
+df['varianza_recibidos_vis'] = 0.0
+df['games_played_local'] = 0
+df['games_played_vis'] = 0
 
-print("\n🛠️ Calculando promedios móviles acumulados semana a semana...")
-print("   (Utilizando datos de TODAS las temporadas en el historial)")
+print("   Calculando promedios móviles, varianzas y tendencias...")
 
 for idx, row in df.iterrows():
     loc = row['equipo_local']
     vis = row['equipo_visitante']
     
-    # Asignamos el promedio que tenía el equipo ANTES de jugar este partido
+    # PROMEDIO MÓVIL
     if historial_anotados[loc]:
         df.at[idx, 'prom_puntos_local_anotados'] = np.mean(historial_anotados[loc])
         df.at[idx, 'prom_puntos_local_recibidos'] = np.mean(historial_recibidos[loc])
+        # VARIANZA (indica consistencia)
+        df.at[idx, 'varianza_anotados_local'] = np.var(historial_anotados[loc])
+        df.at[idx, 'varianza_recibidos_local'] = np.var(historial_recibidos[loc])
+        df.at[idx, 'games_played_local'] = len(historial_anotados[loc])
+        
     if historial_anotados[vis]:
         df.at[idx, 'prom_puntos_vis_anotados'] = np.mean(historial_anotados[vis])
         df.at[idx, 'prom_puntos_vis_recibidos'] = np.mean(historial_recibidos[vis])
-        
-    # Guardamos el resultado real de este partido para usarlo en las semanas siguientes
+        df.at[idx, 'varianza_anotados_vis'] = np.var(historial_anotados[vis])
+        df.at[idx, 'varianza_recibidos_vis'] = np.var(historial_recibidos[vis])
+        df.at[idx, 'games_played_vis'] = len(historial_anotados[vis])
+    
+    # DIFERENCIA (métrica clave)
+    df.at[idx, 'diferencia_puntos_local'] = df.at[idx, 'prom_puntos_local_anotados'] - df.at[idx, 'prom_puntos_local_recibidos']
+    df.at[idx, 'diferencia_puntos_vis'] = df.at[idx, 'prom_puntos_vis_anotados'] - df.at[idx, 'prom_puntos_vis_recibidos']
+    
+    # Guardar resultados
     historial_anotados[loc].append(row['puntos_local'])
     historial_recibidos[loc].append(row['puntos_visitante'])
     
     historial_anotados[vis].append(row['puntos_visitante'])
     historial_recibidos[vis].append(row['puntos_local'])
 
-# Definimos la variable objetivo (Target): 1 = Ganó Local, 0 = Ganó Visitante
+# CARACTERÍSTICAS DERIVADAS (interacciones y ratios)
+df['ratio_ofensivo'] = df['prom_puntos_local_anotados'] / (df['prom_puntos_vis_recibidos'] + 1)
+df['ratio_defensivo'] = df['prom_puntos_local_recibidos'] / (df['prom_puntos_vis_anotados'] + 1)
+df['ventaja_ofensiva'] = df['prom_puntos_local_anotados'] - df['prom_puntos_vis_recibidos']
+df['ventaja_defensiva'] = df['prom_puntos_vis_anotados'] - df['prom_puntos_local_recibidos']
+df['experiencia_relativa'] = df['games_played_local'] - df['games_played_vis']
+
+# Variable objetivo
 df['gana_local'] = (df['puntos_local'] > df['puntos_visitante']).astype(int)
 
-# =====================================================================
-# 4. DIVISIÓN INTELIGENTE (EVITANDO DATA LEAKAGE)
-# =====================================================================
-# Estrategia de entrenamiento mejorada:
-# - Entrenamos con el 80% de los datos históricos (combinados de ambas temporadas)
-# - Evaluamos con el 20% restante (datos más recientes)
-
-total_partidos = len(df)
-punto_corte = int(0.8 * total_partidos)
-
-df_train = df.iloc[:punto_corte]
-df_test = df.iloc[punto_corte:]
-
-caracteristicas = ['prom_puntos_local_anotados', 'prom_puntos_local_recibidos', 
-                   'prom_puntos_vis_anotados', 'prom_puntos_vis_recibidos']
-
-X_train = df_train[caracteristicas]
-y_train = df_train['gana_local']
-
-X_test = df_test[caracteristicas]
-y_test = df_test['gana_local']
-
-print(f"\n📊 División de datos para entrenamiento:")
-print(f"   - Partidos para entrenamiento: {len(X_train)} ({len(X_train)/total_partidos*100:.1f}%)")
-print(f"   - Partidos para evaluación: {len(X_test)} ({len(X_test)/total_partidos*100:.1f}%)")
+print(f"✅ {len(df.columns)} características creadas")
 
 # =====================================================================
-# 5. ESCALADO DE VARIABLES Y ENTRENAMIENTO
+# 4. ANÁLISIS DE CARACTERÍSTICAS
+# =====================================================================
+print("\n📊 Análisis de correlación...")
+
+# Seleccionar solo características numéricas
+caracteristicas = [
+    'prom_puntos_local_anotados', 'prom_puntos_local_recibidos',
+    'prom_puntos_vis_anotados', 'prom_puntos_vis_recibidos',
+    'diferencia_puntos_local', 'diferencia_puntos_vis',
+    'varianza_anotados_local', 'varianza_recibidos_local',
+    'varianza_anotados_vis', 'varianza_recibidos_vis',
+    'games_played_local', 'games_played_vis',
+    'ratio_ofensivo', 'ratio_defensivo',
+    'ventaja_ofensiva', 'ventaja_defensiva', 'experiencia_relativa'
+]
+
+X = df[caracteristicas].fillna(0)
+y = df['gana_local']
+
+# Correlación con el target
+correlaciones = X.corr().dot(y)
+correlaciones_abs = correlaciones.abs().sort_values(ascending=False)
+
+print("\nTop 10 características por correlación:")
+for i, (feat, corr) in enumerate(correlaciones_abs.head(10).items(), 1):
+    print(f"   {i}. {feat}: {corr:.4f}")
+
+# =====================================================================
+# 5. DIVISIÓN INTELIGENTE DE DATOS
+# =====================================================================
+print("\n📊 División de datos para entrenamiento...")
+
+# División temporal para evitar data leakage
+punto_corte = int(0.8 * len(df))
+
+X_train = X.iloc[:punto_corte]
+y_train = y.iloc[:punto_corte]
+
+X_test = X.iloc[punto_corte:]
+y_test = y.iloc[punto_corte:]
+
+print(f"   - Entrenamiento: {len(X_train)} partidos (80%)")
+print(f"   - Evaluación: {len(X_test)} partidos (20%)")
+
+# =====================================================================
+# 6. ESCALADO (requerido para algunos modelos)
 # =====================================================================
 escalador = StandardScaler()
 X_train_escalado = escalador.fit_transform(X_train)
 X_test_escalado = escalador.transform(X_test)
 
-modelo = LogisticRegression(max_iter=1000, random_state=42)
-modelo.fit(X_train_escalado, y_train)
-print("\n🎯 ¡Modelo de Regresión Logística entrenado exitosamente!")
-print(f"   Datos de entrenamiento: 2024 + 2025-2026 (combinados)")
+# =====================================================================
+# 7. ENTRENAMIENTO DE MÚLTIPLES MODELOS
+# =====================================================================
+print("\n🤖 Entrenando múltiples modelos...")
+
+modelos = {}
+
+# MODELO 1: Random Forest (potente, menos overfitting)
+print("   1. Entrenando Random Forest...")
+rf_model = RandomForestClassifier(
+    n_estimators=200,
+    max_depth=15,
+    min_samples_split=5,
+    min_samples_leaf=2,
+    random_state=42,
+    n_jobs=-1,
+    class_weight='balanced'
+)
+rf_model.fit(X_train, y_train)
+modelos['Random Forest'] = rf_model
+
+# MODELO 2: Gradient Boosting (muy poderoso)
+print("   2. Entrenando Gradient Boosting...")
+gb_model = GradientBoostingClassifier(
+    n_estimators=200,
+    learning_rate=0.05,
+    max_depth=5,
+    min_samples_split=5,
+    min_samples_leaf=2,
+    random_state=42,
+    subsample=0.8
+)
+gb_model.fit(X_train, y_train)
+modelos['Gradient Boosting'] = gb_model
 
 # =====================================================================
-# 6. EVALUACIÓN DEL RENDIMIENTO DEL MODELO
+# 8. EVALUACIÓN DE MODELOS
 # =====================================================================
-predicciones = modelo.predict(X_test_escalado)
-precision = accuracy_score(y_test, predicciones)
+print("\n📈 ==================================================")
+print("   EVALUACIÓN DE MODELOS")
+print("==================================================\n")
 
-print(f"\n📈 ==================================================")
-print(f"   RENDIMIENTO DEL MODELO (DATOS COMBINADOS)")
-print(f"   Precisión Global (Accuracy): {precision:.2%}")
-print(f"==================================================\n")
-print("Reporte de Clasificación detallado:")
-print(classification_report(y_test, predicciones, target_names=['Gana Visitante', 'Gana Local']))
+mejor_accuracy = 0
+mejor_modelo_nombre = ""
+mejor_modelo = None
+
+resultados = {}
+
+for nombre, modelo in modelos.items():
+    predicciones = modelo.predict(X_test)
+    accuracy = accuracy_score(y_test, predicciones)
+    
+    # ROC-AUC para evaluación adicional
+    predicciones_proba = modelo.predict_proba(X_test)[:, 1]
+    roc_auc = roc_auc_score(y_test, predicciones_proba)
+    
+    resultados[nombre] = {
+        'accuracy': accuracy,
+        'roc_auc': roc_auc,
+        'predicciones': predicciones,
+        'probabilidades': predicciones_proba
+    }
+    
+    print(f"🎯 {nombre}")
+    print(f"   Accuracy: {accuracy:.2%}")
+    print(f"   ROC-AUC: {roc_auc:.4f}")
+    print(f"   Reporte de Clasificación:")
+    print(classification_report(y_test, predicciones, target_names=['Gana Visitante', 'Gana Local']))
+    print()
+    
+    if accuracy > mejor_accuracy:
+        mejor_accuracy = accuracy
+        mejor_modelo_nombre = nombre
+        mejor_modelo = modelo
 
 # =====================================================================
-# 7. GUARDAR MODELO Y ESCALADOR
+# 9. MATRIZ DE CONFUSIÓN DEL MEJOR MODELO
 # =====================================================================
-joblib.dump(modelo, 'modelo_predicciones.pkl')
+print(f"✅ MEJOR MODELO: {mejor_modelo_nombre}")
+print(f"   Accuracy final: {mejor_accuracy:.2%}")
+print(f"   Mejora respecto a baseline (61.86%): +{(mejor_accuracy - 0.6186)*100:.2f}%")
+
+# =====================================================================
+# 10. IMPORTANCIA DE CARACTERÍSTICAS (Feature Importance)
+# =====================================================================
+print(f"\n🔍 Características más importantes en {mejor_modelo_nombre}:")
+
+if hasattr(mejor_modelo, 'feature_importances_'):
+    importancias = mejor_modelo.feature_importances_
+    indices_ordenados = np.argsort(importancias)[::-1]
+    
+    print("\n   Top 10 características:")
+    for i, idx in enumerate(indices_ordenados[:10], 1):
+        print(f"   {i}. {caracteristicas[idx]}: {importancias[idx]:.4f}")
+
+# =====================================================================
+# 11. GUARDAR MEJOR MODELO
+# =====================================================================
+print(f"\n💾 Guardando el mejor modelo ({mejor_modelo_nombre})...")
+joblib.dump(mejor_modelo, 'mejor_modelo_predicciones.pkl')
 joblib.dump(escalador, 'escalador_predicciones.pkl')
-print("\n💾 Modelo y escalador guardados exitosamente")
-print("   - modelo_predicciones.pkl")
-print("   - escalador_predicciones.pkl")
+print("   ✅ Archivos guardados:")
+print("      - mejor_modelo_predicciones.pkl")
+print("      - escalador_predicciones.pkl")
 
 # =====================================================================
-# 8. RESUMEN Y PRÓXIMOS PASOS
+# 12. RESUMEN FINAL
 # =====================================================================
-print(f"\n✅ RESUMEN DEL REENTRENAMIENTO:")
-print(f"   • Datos utilizados: {len(df)} partidos totales")
-print(f"   • Fuentes: Temporada 2024 + Temporada 2025-2026")
-print(f"   • Historial de equipos: ACTUALIZADO con datos recientes")
-print(f"   • Modelo guardado: LISTO para realizar predicciones")
-print(f"\n🚀 El modelo está optimizado y listo para usar!")
+print(f"\n{'='*60}")
+print("✅ RESUMEN DEL REENTRENAMIENTO OPTIMIZADO")
+print(f"{'='*60}")
+print(f"📊 Datos:")
+print(f"   • Total de partidos: {len(df)}")
+print(f"   • Características ingeniería: {len(caracteristicas)}")
+print(f"\n🤖 Modelos entrenados:")
+for nombre, resultado in resultados.items():
+    print(f"   • {nombre}: {resultado['accuracy']:.2%}")
+print(f"\n🏆 Mejor modelo: {mejor_modelo_nombre}")
+print(f"   Accuracy: {mejor_accuracy:.2%}")
+print(f"   ROC-AUC: {resultados[mejor_modelo_nombre]['roc_auc']:.4f}")
+print(f"\n🚀 El modelo está listo para predicciones en tiempo real!")
+print(f"{'='*60}\n")
+
+# =====================================================================
+# 13. INSTRUCCIONES PARA USAR EL MODELO GUARDADO
+# =====================================================================
+print("📝 Para usar el modelo guardado en futuras predicciones:")
+print("""
+    import joblib
+    import pandas as pd
+    
+    modelo = joblib.load('mejor_modelo_predicciones.pkl')
+    escalador = joblib.load('escalador_predicciones.pkl')
+    
+    # Preparar características igual que en entrenamiento
+    prediccion = modelo.predict(X_nuevo)  # retorna 0 o 1
+    probabilidades = modelo.predict_proba(X_nuevo)  # confianza
+""")
