@@ -1,13 +1,13 @@
-name: Download NFL 2024 Data
+name: Train NFL Model
 
 on:
   workflow_dispatch: # Activa el botón para ejecutar manualmente desde el móvil
 
 permissions:
-  contents: write # Otorga permiso para que el servidor guarde el archivo CSV en tu repositorio
+  contents: write
 
 jobs:
-  download-data:
+  train-model:
     runs-on: ubuntu-latest
     steps:
     - name: Descargar el código del repositorio
@@ -22,20 +22,7 @@ jobs:
     - name: Instalar librerías
       run: pip install -r requirements.txt
 
-    - name: Ejecutar descarga de datos
+    - name: Ejecutar entrenamiento del modelo
       env:
         API_SPORTS_KEY: ${{ secrets.API_SPORTS_KEY }}
       run: python predicciones.py
-
-    - name: Subir CSV de la temporada al repositorio
-      run: |
-        git config --local user.email "actions@github.com"
-        git config --local user.name "GitHub Actions Bot"
-        
-        if [ -f "temporada_2024_crudo.csv" ]; then
-          git add temporada_2024_crudo.csv
-          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Descarga automática temporada 2024" && git push)
-        else
-          echo "Error: No se encontró el archivo temporada_2024_crudo.csv"
-          exit 1
-        fi
