@@ -1,0 +1,41 @@
+name: Download NFL 2025 Data
+
+on:
+  workflow_dispatch: # Activa el botón para ejecutar manualmente desde el móvil
+
+permissions:
+  contents: write # Otorga permiso para que el servidor guarde el archivo CSV en tu repositorio
+
+jobs:
+  download-data:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Descargar el código del repositorio
+      uses: actions/checkout@v4
+
+    - name: Configurar Python en el servidor
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+
+    - name: Instalar librerías
+      run: pip install -r requirements.txt
+
+    - name: Ejecutar descarga de datos
+      env:
+        API_SPORTS_KEY: ${{ secrets.API_SPORTS_KEY }}
+      run: python predicciones.py
+
+    - name: Subir CSV de la temporada al repositorio
+      run: |
+        git config --local user.email "actions@github.com"
+        git config --local user.name "GitHub Actions Bot"
+        
+        if [ -f "temporada_2025_crudo.csv" ]; then
+          git add temporada_2025_crudo.csv
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Descarga automática temporada 2025" && git push)
+        else
+          echo "Error: No se encontró el archivo temporada_2025_crudo.csv"
+          exit 1
+        fi
