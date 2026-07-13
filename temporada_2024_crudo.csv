@@ -1,0 +1,336 @@
+id_partido,fecha,semana,estadio,estado_partido,equipo_local,equipo_visitante,puntos_local,puntos_visitante
+13146,"{'timezone': 'UTC', 'date': '2024-08-02', 'time': '00:00', 'timestamp': 1722556800}",1,Tom Benson Hall of Fame Stadium,FT,Chicago Bears,Houston Texans,21.0,17.0
+13147,"{'timezone': 'UTC', 'date': '2024-08-08', 'time': '23:00', 'timestamp': 1723158000}",1,Gillette Stadium,FT,New England Patriots,Carolina Panthers,17.0,3.0
+17139,"{'timezone': 'UTC', 'date': '2024-08-08', 'time': '23:00', 'timestamp': 1723158000}",1,MetLife Stadium,FT,New York Giants,Detroit Lions,14.0,3.0
+13148,"{'timezone': 'UTC', 'date': '2024-08-09', 'time': '23:00', 'timestamp': 1723244400}",1,Hard Rock Stadium,FT,Miami Dolphins,Atlanta Falcons,20.0,13.0
+13149,"{'timezone': 'UTC', 'date': '2024-08-09', 'time': '23:00', 'timestamp': 1723244400}",1,Acrisure Stadium,FT,Pittsburgh Steelers,Houston Texans,12.0,20.0
+13150,"{'timezone': 'UTC', 'date': '2024-08-09', 'time': '23:30', 'timestamp': 1723246200}",1,M&T Bank Stadium,FT,Baltimore Ravens,Philadelphia Eagles,13.0,16.0
+17140,"{'timezone': 'UTC', 'date': '2024-08-10', 'time': '16:00', 'timestamp': 1723305600}",1,MetLife Stadium,FT,New York Jets,Washington Commanders,20.0,17.0
+13151,"{'timezone': 'UTC', 'date': '2024-08-10', 'time': '17:00', 'timestamp': 1723309200}",1,Highmark Stadium,FT,Buffalo Bills,Chicago Bears,6.0,33.0
+13152,"{'timezone': 'UTC', 'date': '2024-08-10', 'time': '20:00', 'timestamp': 1723320000}",1,U.S. Bank Stadium,FT,Minnesota Vikings,Las Vegas Raiders,24.0,23.0
+13154,"{'timezone': 'UTC', 'date': '2024-08-10', 'time': '20:25', 'timestamp': 1723321500}",1,Huntington Bank Field,FT,Cleveland Browns,Green Bay Packers,10.0,23.0
+13155,"{'timezone': 'UTC', 'date': '2024-08-10', 'time': '23:00', 'timestamp': 1723330800}",1,Paycor Stadium,FT,Cincinnati Bengals,Tampa Bay Buccaneers,14.0,17.0
+13156,"{'timezone': 'UTC', 'date': '2024-08-10', 'time': '23:00', 'timestamp': 1723330800}",1,EverBank Stadium,FT,Jacksonville Jaguars,Kansas City Chiefs,26.0,13.0
+17141,"{'timezone': 'UTC', 'date': '2024-08-10', 'time': '23:00', 'timestamp': 1723330800}",1,Nissan Stadium,FT,Tennessee Titans,San Francisco 49ers,17.0,13.0
+13153,"{'timezone': 'UTC', 'date': '2024-08-10', 'time': '23:05', 'timestamp': 1723331100}",1,SoFi Stadium,FT,Los Angeles Chargers,Seattle Seahawks,3.0,16.0
+17142,"{'timezone': 'UTC', 'date': '2024-08-11', 'time': '00:00', 'timestamp': 1723334400}",1,State Farm Stadium,FT,Arizona Cardinals,New Orleans Saints,14.0,16.0
+13186,"{'timezone': 'UTC', 'date': '2024-09-06', 'time': '00:40', 'timestamp': 1725583200}",1,GEHA Field at Arrowhead Stadium,FT,Kansas City Chiefs,Baltimore Ravens,27.0,20.0
+13201,"{'timezone': 'UTC', 'date': '2024-09-10', 'time': '00:15', 'timestamp': 1725927300}",1,Levi's Stadium,FT,San Francisco 49ers,New York Jets,32.0,19.0
+13200,"{'timezone': 'UTC', 'date': '2024-09-09', 'time': '00:20', 'timestamp': 1725841200}",1,Ford Field,,Detroit Lions,Los Angeles Rams,26.0,20.0
+13198,"{'timezone': 'UTC', 'date': '2024-09-08', 'time': '20:25', 'timestamp': 1725827100}",1,Huntington Bank Field,FT,Cleveland Browns,Dallas Cowboys,17.0,33.0
+13199,"{'timezone': 'UTC', 'date': '2024-09-08', 'time': '20:25', 'timestamp': 1725827100}",1,Raymond James Stadium,FT,Tampa Bay Buccaneers,Washington Commanders,37.0,20.0
+13196,"{'timezone': 'UTC', 'date': '2024-09-08', 'time': '20:05', 'timestamp': 1725825900}",1,SoFi Stadium,FT,Los Angeles Chargers,Las Vegas Raiders,22.0,10.0
+13195,"{'timezone': 'UTC', 'date': '2024-09-08', 'time': '17:00', 'timestamp': 1725814800}",1,MetLife Stadium,FT,New York Giants,Minnesota Vikings,6.0,28.0
+13194,"{'timezone': 'UTC', 'date': '2024-09-08', 'time': '17:00', 'timestamp': 1725814800}",1,Caesars Superdome,FT,New Orleans Saints,Carolina Panthers,47.0,10.0
+13197,"{'timezone': 'UTC', 'date': '2024-09-08', 'time': '20:05', 'timestamp': 1725825900}",1,Lumen Field,FT,Seattle Seahawks,Denver Broncos,26.0,20.0
+13193,"{'timezone': 'UTC', 'date': '2024-09-08', 'time': '17:00', 'timestamp': 1725814800}",1,Hard Rock Stadium,FT,Miami Dolphins,Jacksonville Jaguars,20.0,17.0
+13192,"{'timezone': 'UTC', 'date': '2024-09-08', 'time': '17:00', 'timestamp': 1725814800}",1,Lucas Oil Stadium,FT,Indianapolis Colts,Houston Texans,27.0,29.0
+13190,"{'timezone': 'UTC', 'date': '2024-09-08', 'time': '17:00', 'timestamp': 1725814800}",1,Soldier Field,FT,Chicago Bears,Tennessee Titans,24.0,17.0
+13191,"{'timezone': 'UTC', 'date': '2024-09-08', 'time': '17:00', 'timestamp': 1725814800}",1,Paycor Stadium,FT,Cincinnati Bengals,New England Patriots,10.0,16.0
+13189,"{'timezone': 'UTC', 'date': '2024-09-08', 'time': '17:00', 'timestamp': 1725814800}",1,Highmark Stadium,FT,Buffalo Bills,Arizona Cardinals,34.0,28.0
+13188,"{'timezone': 'UTC', 'date': '2024-09-08', 'time': '17:00', 'timestamp': 1725814800}",1,Mercedes-Benz Stadium,FT,Atlanta Falcons,Pittsburgh Steelers,10.0,18.0
+13187,"{'timezone': 'UTC', 'date': '2024-09-07', 'time': '00:15', 'timestamp': 1725668100}",1,Corinthians Arena,FT,Philadelphia Eagles,Green Bay Packers,34.0,29.0
+13157,"{'timezone': 'UTC', 'date': '2024-08-11', 'time': '17:00', 'timestamp': 1723395600}",1,Lucas Oil Stadium,FT,Indianapolis Colts,Denver Broncos,30.0,34.0
+13459,"{'timezone': 'UTC', 'date': '2025-01-13', 'time': '01:00', 'timestamp': 1736730000}",1,Raymond James Stadium,FT,Tampa Bay Buccaneers,Washington Commanders,20.0,23.0
+17278,"{'timezone': 'UTC', 'date': '2025-01-14', 'time': '01:00', 'timestamp': 1736816400}",1,State Farm Stadium,FT,Los Angeles Rams,Minnesota Vikings,27.0,9.0
+13460,"{'timezone': 'UTC', 'date': '2025-01-18', 'time': '21:30', 'timestamp': 1737235800}",1,GEHA Field at Arrowhead Stadium,FT,Kansas City Chiefs,Houston Texans,23.0,14.0
+13461,"{'timezone': 'UTC', 'date': '2025-01-19', 'time': '01:00', 'timestamp': 1737248400}",1,Ford Field,FT,Detroit Lions,Washington Commanders,31.0,45.0
+13463,"{'timezone': 'UTC', 'date': '2025-01-19', 'time': '20:00', 'timestamp': 1737316800}",1,Lincoln Financial Field,FT,Philadelphia Eagles,Los Angeles Rams,28.0,22.0
+13462,"{'timezone': 'UTC', 'date': '2025-01-19', 'time': '23:30', 'timestamp': 1737329400}",1,Highmark Stadium,FT,Buffalo Bills,Baltimore Ravens,27.0,25.0
+13465,"{'timezone': 'UTC', 'date': '2025-01-26', 'time': '20:00', 'timestamp': 1737921600}",1,Lincoln Financial Field,FT,Philadelphia Eagles,Washington Commanders,55.0,23.0
+13464,"{'timezone': 'UTC', 'date': '2025-01-26', 'time': '23:30', 'timestamp': 1737934200}",1,GEHA Field at Arrowhead Stadium,FT,Kansas City Chiefs,Buffalo Bills,32.0,29.0
+17148,"{'timezone': 'UTC', 'date': '2025-02-02', 'time': '20:00', 'timestamp': 1738526400}",1,Camping World Stadium,NS,NFC,AFC,,
+13466,"{'timezone': 'UTC', 'date': '2025-02-09', 'time': '23:30', 'timestamp': 1739143800}",1,Caesars Superdome,FT,Philadelphia Eagles,Kansas City Chiefs,40.0,22.0
+17276,"{'timezone': 'UTC', 'date': '2025-01-12', 'time': '18:00', 'timestamp': 1736704800}",1,Highmark Stadium,FT,Buffalo Bills,Denver Broncos,31.0,7.0
+17277,"{'timezone': 'UTC', 'date': '2025-01-12', 'time': '21:30', 'timestamp': 1736717400}",1,Lincoln Financial Field,FT,Philadelphia Eagles,Green Bay Packers,22.0,10.0
+17275,"{'timezone': 'UTC', 'date': '2025-01-11', 'time': '21:30', 'timestamp': 1736631000}",1,NRG Stadium,FT,Houston Texans,Los Angeles Chargers,32.0,12.0
+13458,"{'timezone': 'UTC', 'date': '2025-01-12', 'time': '01:00', 'timestamp': 1736643600}",1,M&T Bank Stadium,FT,Baltimore Ravens,Pittsburgh Steelers,28.0,14.0
+13158,"{'timezone': 'UTC', 'date': '2024-08-11', 'time': '20:30', 'timestamp': 1723408200}",1,SoFi Stadium,FT,Los Angeles Rams,Dallas Cowboys,13.0,12.0
+13172,"{'timezone': 'UTC', 'date': '2024-08-19', 'time': '00:00', 'timestamp': 1724025600}",2,Levi's Stadium,FT,San Francisco 49ers,New Orleans Saints,16.0,10.0
+13209,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '17:00', 'timestamp': 1726419600}",2,Northwest Stadium,FT,Washington Commanders,New York Giants,21.0,18.0
+13202,"{'timezone': 'UTC', 'date': '2024-09-13', 'time': '00:15', 'timestamp': 1726186500}",2,Hard Rock Stadium,FT,Miami Dolphins,Buffalo Bills,10.0,31.0
+13203,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '17:00', 'timestamp': 1726419600}",2,AT&T Stadium,FT,Dallas Cowboys,New Orleans Saints,19.0,44.0
+13204,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '17:00', 'timestamp': 1726419600}",2,Ford Field,FT,Detroit Lions,Tampa Bay Buccaneers,16.0,20.0
+13205,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '17:00', 'timestamp': 1726419600}",2,Lambeau Field,FT,Green Bay Packers,Indianapolis Colts,16.0,10.0
+13206,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '17:00', 'timestamp': 1726419600}",2,Nissan Stadium,FT,Tennessee Titans,New York Jets,17.0,24.0
+13207,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '17:00', 'timestamp': 1726419600}",2,U.S. Bank Stadium,FT,Minnesota Vikings,San Francisco 49ers,23.0,17.0
+13208,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '17:00', 'timestamp': 1726419600}",2,Gillette Stadium,,New England Patriots,Seattle Seahawks,20.0,23.0
+13213,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '20:05', 'timestamp': 1726430700}",2,State Farm Stadium,FT,Arizona Cardinals,Los Angeles Rams,41.0,10.0
+13210,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '17:00', 'timestamp': 1726419600}",2,Bank of America Stadium,FT,Carolina Panthers,Los Angeles Chargers,3.0,26.0
+13211,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '17:00', 'timestamp': 1726419600}",2,EverBank Stadium,FT,Jacksonville Jaguars,Cleveland Browns,13.0,18.0
+13212,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '17:00', 'timestamp': 1726419600}",2,M&T Bank Stadium,FT,Baltimore Ravens,Las Vegas Raiders,23.0,26.0
+13215,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '20:25', 'timestamp': 1726431900}",2,GEHA Field at Arrowhead Stadium,FT,Kansas City Chiefs,Cincinnati Bengals,26.0,25.0
+13214,"{'timezone': 'UTC', 'date': '2024-09-15', 'time': '20:25', 'timestamp': 1726431900}",2,Empower Field at Mile High,FT,Denver Broncos,Pittsburgh Steelers,6.0,13.0
+13216,"{'timezone': 'UTC', 'date': '2024-09-16', 'time': '00:20', 'timestamp': 1726446000}",2,NRG Stadium,FT,Houston Texans,Chicago Bears,19.0,13.0
+13171,"{'timezone': 'UTC', 'date': '2024-08-19', 'time': '00:00', 'timestamp': 1724025600}",2,Empower Field at Mile High,FT,Denver Broncos,Green Bay Packers,27.0,2.0
+13217,"{'timezone': 'UTC', 'date': '2024-09-17', 'time': '00:15', 'timestamp': 1726532100}",2,Lincoln Financial Field,FT,Philadelphia Eagles,Atlanta Falcons,21.0,22.0
+13159,"{'timezone': 'UTC', 'date': '2024-08-15', 'time': '23:00', 'timestamp': 1723762800}",2,Gillette Stadium,FT,New England Patriots,Philadelphia Eagles,13.0,14.0
+17143,"{'timezone': 'UTC', 'date': '2024-08-17', 'time': '23:00', 'timestamp': 1723935600}",2,Nissan Stadium,FT,Tennessee Titans,Seattle Seahawks,16.0,15.0
+13168,"{'timezone': 'UTC', 'date': '2024-08-17', 'time': '23:00', 'timestamp': 1723935600}",2,Acrisure Stadium,FT,Pittsburgh Steelers,Buffalo Bills,3.0,9.0
+13161,"{'timezone': 'UTC', 'date': '2024-08-17', 'time': '17:00', 'timestamp': 1723914000}",2,NRG Stadium,FT,Houston Texans,New York Giants,28.0,10.0
+13162,"{'timezone': 'UTC', 'date': '2024-08-17', 'time': '17:00', 'timestamp': 1723914000}",2,Soldier Field,FT,Chicago Bears,Cincinnati Bengals,27.0,3.0
+13164,"{'timezone': 'UTC', 'date': '2024-08-17', 'time': '20:00', 'timestamp': 1723924800}",2,GEHA Field at Arrowhead Stadium,FT,Kansas City Chiefs,Detroit Lions,23.0,24.0
+13166,"{'timezone': 'UTC', 'date': '2024-08-17', 'time': '20:25', 'timestamp': 1723926300}",2,Huntington Bank Field,FT,Cleveland Browns,Minnesota Vikings,12.0,27.0
+13160,"{'timezone': 'UTC', 'date': '2024-08-17', 'time': '16:00', 'timestamp': 1723910400}",2,M&T Bank Stadium,FT,Baltimore Ravens,Atlanta Falcons,13.0,12.0
+13165,"{'timezone': 'UTC', 'date': '2024-08-17', 'time': '23:05', 'timestamp': 1723935900}",2,SoFi Stadium,FT,Los Angeles Chargers,Los Angeles Rams,9.0,13.0
+13167,"{'timezone': 'UTC', 'date': '2024-08-17', 'time': '23:00', 'timestamp': 1723935600}",2,Hard Rock Stadium,FT,Miami Dolphins,Washington Commanders,13.0,6.0
+13163,"{'timezone': 'UTC', 'date': '2024-08-17', 'time': '23:00', 'timestamp': 1723935600}",2,Lucas Oil Stadium,FT,Indianapolis Colts,Arizona Cardinals,21.0,13.0
+17144,"{'timezone': 'UTC', 'date': '2024-08-17', 'time': '23:00', 'timestamp': 1723935600}",2,Bank of America Stadium,FT,Carolina Panthers,New York Jets,12.0,15.0
+13170,"{'timezone': 'UTC', 'date': '2024-08-18', 'time': '02:00', 'timestamp': 1723946400}",2,Allegiant Stadium,FT,Las Vegas Raiders,Dallas Cowboys,12.0,27.0
+13169,"{'timezone': 'UTC', 'date': '2024-08-17', 'time': '23:30', 'timestamp': 1723937400}",2,EverBank Stadium,FT,Jacksonville Jaguars,Tampa Bay Buccaneers,20.0,7.0
+13218,"{'timezone': 'UTC', 'date': '2024-09-20', 'time': '00:15', 'timestamp': 1726791300}",3,MetLife Stadium,FT,New York Jets,New England Patriots,24.0,3.0
+13185,"{'timezone': 'UTC', 'date': '2024-08-26', 'time': '00:00', 'timestamp': 1724630400}",3,Northwest Stadium,FT,Washington Commanders,New England Patriots,20.0,10.0
+13184,"{'timezone': 'UTC', 'date': '2024-08-25', 'time': '20:30', 'timestamp': 1724617800}",3,Empower Field at Mile High,FT,Denver Broncos,Arizona Cardinals,38.0,12.0
+13183,"{'timezone': 'UTC', 'date': '2024-08-25', 'time': '02:00', 'timestamp': 1724551200}",3,Lumen Field,FT,Seattle Seahawks,Cleveland Browns,37.0,33.0
+17147,"{'timezone': 'UTC', 'date': '2024-08-25', 'time': '18:00', 'timestamp': 1724608800}",3,Caesars Superdome,FT,New Orleans Saints,Tennessee Titans,27.0,30.0
+13180,"{'timezone': 'UTC', 'date': '2024-08-24', 'time': '20:00', 'timestamp': 1724529600}",3,AT&T Stadium,FT,Dallas Cowboys,Los Angeles Chargers,19.0,26.0
+17145,"{'timezone': 'UTC', 'date': '2024-08-24', 'time': '17:00', 'timestamp': 1724518800}",3,Ford Field,FT,Detroit Lions,Pittsburgh Steelers,24.0,17.0
+13182,"{'timezone': 'UTC', 'date': '2024-08-24', 'time': '17:00', 'timestamp': 1724518800}",3,Lincoln Financial Field,FT,Philadelphia Eagles,Minnesota Vikings,3.0,26.0
+17146,"{'timezone': 'UTC', 'date': '2024-08-24', 'time': '23:30', 'timestamp': 1724542200}",3,MetLife Stadium,FT,New York Jets,New York Giants,10.0,6.0
+13179,"{'timezone': 'UTC', 'date': '2024-08-24', 'time': '17:00', 'timestamp': 1724518800}",3,NRG Stadium,FT,Houston Texans,Los Angeles Rams,17.0,15.0
+13178,"{'timezone': 'UTC', 'date': '2024-08-24', 'time': '17:00', 'timestamp': 1724518800}",3,Highmark Stadium,FT,Buffalo Bills,Carolina Panthers,26.0,31.0
+13177,"{'timezone': 'UTC', 'date': '2024-08-24', 'time': '02:00', 'timestamp': 1724464800}",3,Allegiant Stadium,FT,Las Vegas Raiders,San Francisco 49ers,24.0,24.0
+13176,"{'timezone': 'UTC', 'date': '2024-08-23', 'time': '23:30', 'timestamp': 1724455800}",3,Raymond James Stadium,FT,Tampa Bay Buccaneers,Miami Dolphins,24.0,14.0
+13175,"{'timezone': 'UTC', 'date': '2024-08-23', 'time': '23:00', 'timestamp': 1724454000}",3,Mercedes-Benz Stadium,FT,Atlanta Falcons,Jacksonville Jaguars,0.0,31.0
+13173,"{'timezone': 'UTC', 'date': '2024-08-23', 'time': '00:20', 'timestamp': 1724372400}",3,GEHA Field at Arrowhead Stadium,FT,Kansas City Chiefs,Chicago Bears,21.0,34.0
+13174,"{'timezone': 'UTC', 'date': '2024-08-23', 'time': '00:00', 'timestamp': 1724371200}",3,Paycor Stadium,FT,Cincinnati Bengals,Indianapolis Colts,14.0,27.0
+13181,"{'timezone': 'UTC', 'date': '2024-08-24', 'time': '17:00', 'timestamp': 1724518800}",3,Lambeau Field,FT,Green Bay Packers,Baltimore Ravens,30.0,7.0
+13233,"{'timezone': 'UTC', 'date': '2024-09-24', 'time': '00:15', 'timestamp': 1727136900}",3,Paycor Stadium,FT,Cincinnati Bengals,Washington Commanders,33.0,38.0
+13226,"{'timezone': 'UTC', 'date': '2024-09-22', 'time': '20:05', 'timestamp': 1727035500}",3,Allegiant Stadium,FT,Las Vegas Raiders,Carolina Panthers,22.0,36.0
+13219,"{'timezone': 'UTC', 'date': '2024-09-22', 'time': '17:00', 'timestamp': 1727024400}",3,Huntington Bank Field,FT,Cleveland Browns,New York Giants,15.0,21.0
+13220,"{'timezone': 'UTC', 'date': '2024-09-22', 'time': '17:00', 'timestamp': 1727024400}",3,Nissan Stadium,FT,Tennessee Titans,Green Bay Packers,14.0,30.0
+13221,"{'timezone': 'UTC', 'date': '2024-09-22', 'time': '17:00', 'timestamp': 1727024400}",3,Lucas Oil Stadium,FT,Indianapolis Colts,Chicago Bears,21.0,16.0
+13222,"{'timezone': 'UTC', 'date': '2024-09-22', 'time': '17:00', 'timestamp': 1727024400}",3,U.S. Bank Stadium,FT,Minnesota Vikings,Houston Texans,34.0,7.0
+13223,"{'timezone': 'UTC', 'date': '2024-09-22', 'time': '17:00', 'timestamp': 1727024400}",3,Caesars Superdome,FT,New Orleans Saints,Philadelphia Eagles,12.0,15.0
+13224,"{'timezone': 'UTC', 'date': '2024-09-22', 'time': '17:00', 'timestamp': 1727024400}",3,Acrisure Stadium,FT,Pittsburgh Steelers,Los Angeles Chargers,20.0,10.0
+13225,"{'timezone': 'UTC', 'date': '2024-09-22', 'time': '17:00', 'timestamp': 1727024400}",3,Raymond James Stadium,FT,Tampa Bay Buccaneers,Denver Broncos,7.0,26.0
+13230,"{'timezone': 'UTC', 'date': '2024-09-22', 'time': '20:25', 'timestamp': 1727036700}",3,State Farm Stadium,FT,Arizona Cardinals,Detroit Lions,13.0,20.0
+13227,"{'timezone': 'UTC', 'date': '2024-09-22', 'time': '20:05', 'timestamp': 1727035500}",3,Lumen Field,FT,Seattle Seahawks,Miami Dolphins,24.0,3.0
+13228,"{'timezone': 'UTC', 'date': '2024-09-22', 'time': '20:25', 'timestamp': 1727036700}",3,AT&T Stadium,FT,Dallas Cowboys,Baltimore Ravens,25.0,28.0
+13229,"{'timezone': 'UTC', 'date': '2024-09-22', 'time': '20:25', 'timestamp': 1727036700}",3,SoFi Stadium,FT,Los Angeles Rams,San Francisco 49ers,27.0,24.0
+13232,"{'timezone': 'UTC', 'date': '2024-09-23', 'time': '23:30', 'timestamp': 1727134200}",3,Highmark Stadium,FT,Buffalo Bills,Jacksonville Jaguars,47.0,10.0
+13231,"{'timezone': 'UTC', 'date': '2024-09-23', 'time': '00:20', 'timestamp': 1727050800}",3,Mercedes-Benz Stadium,FT,Atlanta Falcons,Kansas City Chiefs,17.0,22.0
+13234,"{'timezone': 'UTC', 'date': '2024-09-27', 'time': '00:15', 'timestamp': 1727396100}",4,MetLife Stadium,FT,New York Giants,Dallas Cowboys,15.0,20.0
+13249,"{'timezone': 'UTC', 'date': '2024-10-01', 'time': '00:15', 'timestamp': 1727741700}",4,Ford Field,FT,Detroit Lions,Seattle Seahawks,42.0,29.0
+13242,"{'timezone': 'UTC', 'date': '2024-09-29', 'time': '17:00', 'timestamp': 1727629200}",4,NRG Stadium,FT,Houston Texans,Jacksonville Jaguars,24.0,20.0
+13235,"{'timezone': 'UTC', 'date': '2024-09-29', 'time': '17:00', 'timestamp': 1727629200}",4,Mercedes-Benz Stadium,FT,Atlanta Falcons,New Orleans Saints,26.0,24.0
+13236,"{'timezone': 'UTC', 'date': '2024-09-29', 'time': '17:00', 'timestamp': 1727629200}",4,Soldier Field,FT,Chicago Bears,Los Angeles Rams,24.0,18.0
+13237,"{'timezone': 'UTC', 'date': '2024-09-29', 'time': '17:00', 'timestamp': 1727629200}",4,Lambeau Field,FT,Green Bay Packers,Minnesota Vikings,29.0,31.0
+13238,"{'timezone': 'UTC', 'date': '2024-09-29', 'time': '17:00', 'timestamp': 1727629200}",4,Lucas Oil Stadium,FT,Indianapolis Colts,Pittsburgh Steelers,27.0,24.0
+13239,"{'timezone': 'UTC', 'date': '2024-09-29', 'time': '17:00', 'timestamp': 1727629200}",4,MetLife Stadium,FT,New York Jets,Denver Broncos,9.0,10.0
+13240,"{'timezone': 'UTC', 'date': '2024-09-29', 'time': '17:00', 'timestamp': 1727629200}",4,Raymond James Stadium,FT,Tampa Bay Buccaneers,Philadelphia Eagles,33.0,16.0
+13241,"{'timezone': 'UTC', 'date': '2024-09-29', 'time': '17:00', 'timestamp': 1727629200}",4,Bank of America Stadium,FT,Carolina Panthers,Cincinnati Bengals,24.0,34.0
+13246,"{'timezone': 'UTC', 'date': '2024-09-29', 'time': '20:25', 'timestamp': 1727641500}",4,SoFi Stadium,FT,Los Angeles Chargers,Kansas City Chiefs,10.0,17.0
+13243,"{'timezone': 'UTC', 'date': '2024-09-29', 'time': '20:05', 'timestamp': 1727640300}",4,State Farm Stadium,FT,Arizona Cardinals,Washington Commanders,14.0,42.0
+13244,"{'timezone': 'UTC', 'date': '2024-09-29', 'time': '20:05', 'timestamp': 1727640300}",4,Levi's Stadium,FT,San Francisco 49ers,New England Patriots,30.0,13.0
+13245,"{'timezone': 'UTC', 'date': '2024-09-29', 'time': '20:25', 'timestamp': 1727641500}",4,Allegiant Stadium,FT,Las Vegas Raiders,Cleveland Browns,20.0,16.0
+13248,"{'timezone': 'UTC', 'date': '2024-09-30', 'time': '23:30', 'timestamp': 1727739000}",4,Hard Rock Stadium,FT,Miami Dolphins,Tennessee Titans,12.0,31.0
+13247,"{'timezone': 'UTC', 'date': '2024-09-30', 'time': '00:20', 'timestamp': 1727655600}",4,M&T Bank Stadium,FT,Baltimore Ravens,Buffalo Bills,35.0,10.0
+13250,"{'timezone': 'UTC', 'date': '2024-10-04', 'time': '00:15', 'timestamp': 1728000900}",5,Mercedes-Benz Stadium,,Atlanta Falcons,Tampa Bay Buccaneers,36.0,30.0
+13256,"{'timezone': 'UTC', 'date': '2024-10-06', 'time': '17:00', 'timestamp': 1728234000}",5,EverBank Stadium,FT,Jacksonville Jaguars,Indianapolis Colts,37.0,34.0
+13263,"{'timezone': 'UTC', 'date': '2024-10-08', 'time': '00:15', 'timestamp': 1728346500}",5,GEHA Field at Arrowhead Stadium,FT,Kansas City Chiefs,New Orleans Saints,26.0,13.0
+13262,"{'timezone': 'UTC', 'date': '2024-10-07', 'time': '01:45', 'timestamp': 1728265500}",5,Acrisure Stadium,FT,Pittsburgh Steelers,Dallas Cowboys,17.0,20.0
+13261,"{'timezone': 'UTC', 'date': '2024-10-06', 'time': '20:25', 'timestamp': 1728246300}",5,Lumen Field,FT,Seattle Seahawks,New York Giants,20.0,29.0
+13260,"{'timezone': 'UTC', 'date': '2024-10-06', 'time': '20:25', 'timestamp': 1728246300}",5,SoFi Stadium,FT,Los Angeles Rams,Green Bay Packers,19.0,24.0
+13259,"{'timezone': 'UTC', 'date': '2024-10-06', 'time': '20:05', 'timestamp': 1728245100}",5,Levi's Stadium,FT,San Francisco 49ers,Arizona Cardinals,23.0,24.0
+13258,"{'timezone': 'UTC', 'date': '2024-10-06', 'time': '20:05', 'timestamp': 1728245100}",5,Empower Field at Mile High,FT,Denver Broncos,Las Vegas Raiders,34.0,18.0
+13257,"{'timezone': 'UTC', 'date': '2024-10-06', 'time': '17:00', 'timestamp': 1728234000}",5,NRG Stadium,FT,Houston Texans,Buffalo Bills,23.0,20.0
+13252,"{'timezone': 'UTC', 'date': '2024-10-06', 'time': '17:00', 'timestamp': 1728234000}",5,Soldier Field,FT,Chicago Bears,Carolina Panthers,36.0,10.0
+13255,"{'timezone': 'UTC', 'date': '2024-10-06', 'time': '17:00', 'timestamp': 1728234000}",5,Northwest Stadium,FT,Washington Commanders,Cleveland Browns,34.0,13.0
+13254,"{'timezone': 'UTC', 'date': '2024-10-06', 'time': '17:00', 'timestamp': 1728234000}",5,Gillette Stadium,FT,New England Patriots,Miami Dolphins,10.0,15.0
+13253,"{'timezone': 'UTC', 'date': '2024-10-06', 'time': '17:00', 'timestamp': 1728234000}",5,Paycor Stadium,,Cincinnati Bengals,Baltimore Ravens,38.0,41.0
+13251,"{'timezone': 'UTC', 'date': '2024-10-06', 'time': '13:30', 'timestamp': 1728221400}",5,Tottenham Hotspur Stadium,FT,Minnesota Vikings,New York Jets,23.0,17.0
+13264,"{'timezone': 'UTC', 'date': '2024-10-11', 'time': '00:15', 'timestamp': 1728605700}",6,Lumen Field,FT,Seattle Seahawks,San Francisco 49ers,24.0,36.0
+13266,"{'timezone': 'UTC', 'date': '2024-10-13', 'time': '17:00', 'timestamp': 1728838800}",6,Lambeau Field,FT,Green Bay Packers,Arizona Cardinals,34.0,13.0
+13265,"{'timezone': 'UTC', 'date': '2024-10-13', 'time': '13:30', 'timestamp': 1728826200}",6,Tottenham Hotspur Stadium,FT,Chicago Bears,Jacksonville Jaguars,35.0,16.0
+13272,"{'timezone': 'UTC', 'date': '2024-10-13', 'time': '20:05', 'timestamp': 1728849900}",6,Empower Field at Mile High,FT,Denver Broncos,Los Angeles Chargers,16.0,23.0
+13271,"{'timezone': 'UTC', 'date': '2024-10-13', 'time': '17:00', 'timestamp': 1728838800}",6,M&T Bank Stadium,FT,Baltimore Ravens,Washington Commanders,30.0,23.0
+13270,"{'timezone': 'UTC', 'date': '2024-10-13', 'time': '17:00', 'timestamp': 1728838800}",6,Lincoln Financial Field,FT,Philadelphia Eagles,Cleveland Browns,20.0,16.0
+13277,"{'timezone': 'UTC', 'date': '2024-10-15', 'time': '00:15', 'timestamp': 1728951300}",6,MetLife Stadium,FT,New York Jets,Buffalo Bills,20.0,23.0
+13276,"{'timezone': 'UTC', 'date': '2024-10-14', 'time': '00:20', 'timestamp': 1728865200}",6,MetLife Stadium,FT,New York Giants,Cincinnati Bengals,7.0,17.0
+13275,"{'timezone': 'UTC', 'date': '2024-10-13', 'time': '20:25', 'timestamp': 1728851100}",6,Bank of America Stadium,FT,Carolina Panthers,Atlanta Falcons,20.0,38.0
+13274,"{'timezone': 'UTC', 'date': '2024-10-13', 'time': '20:25', 'timestamp': 1728851100}",6,AT&T Stadium,FT,Dallas Cowboys,Detroit Lions,9.0,47.0
+13273,"{'timezone': 'UTC', 'date': '2024-10-13', 'time': '20:05', 'timestamp': 1728849900}",6,Allegiant Stadium,FT,Las Vegas Raiders,Pittsburgh Steelers,13.0,32.0
+13268,"{'timezone': 'UTC', 'date': '2024-10-13', 'time': '17:00', 'timestamp': 1728838800}",6,Gillette Stadium,FT,New England Patriots,Houston Texans,21.0,41.0
+13267,"{'timezone': 'UTC', 'date': '2024-10-13', 'time': '17:00', 'timestamp': 1728838800}",6,Nissan Stadium,FT,Tennessee Titans,Indianapolis Colts,17.0,20.0
+13269,"{'timezone': 'UTC', 'date': '2024-10-13', 'time': '17:00', 'timestamp': 1728838800}",6,Caesars Superdome,FT,New Orleans Saints,Tampa Bay Buccaneers,27.0,51.0
+13278,"{'timezone': 'UTC', 'date': '2024-10-18', 'time': '00:15', 'timestamp': 1729210500}",7,Caesars Superdome,FT,New Orleans Saints,Denver Broncos,10.0,33.0
+13280,"{'timezone': 'UTC', 'date': '2024-10-20', 'time': '17:00', 'timestamp': 1729443600}",7,Mercedes-Benz Stadium,FT,Atlanta Falcons,Seattle Seahawks,14.0,34.0
+13279,"{'timezone': 'UTC', 'date': '2024-10-20', 'time': '13:30', 'timestamp': 1729431000}",7,Wembley Stadium,FT,Jacksonville Jaguars,New England Patriots,32.0,16.0
+13289,"{'timezone': 'UTC', 'date': '2024-10-20', 'time': '20:25', 'timestamp': 1729455900}",7,Levi's Stadium,FT,San Francisco 49ers,Kansas City Chiefs,18.0,28.0
+13290,"{'timezone': 'UTC', 'date': '2024-10-21', 'time': '00:20', 'timestamp': 1729470000}",7,Acrisure Stadium,FT,Pittsburgh Steelers,New York Jets,37.0,15.0
+13288,"{'timezone': 'UTC', 'date': '2024-10-20', 'time': '20:05', 'timestamp': 1729454700}",7,Northwest Stadium,FT,Washington Commanders,Carolina Panthers,40.0,7.0
+13287,"{'timezone': 'UTC', 'date': '2024-10-20', 'time': '20:05', 'timestamp': 1729454700}",7,SoFi Stadium,FT,Los Angeles Rams,Las Vegas Raiders,20.0,15.0
+13286,"{'timezone': 'UTC', 'date': '2024-10-20', 'time': '17:00', 'timestamp': 1729443600}",7,MetLife Stadium,FT,New York Giants,Philadelphia Eagles,3.0,28.0
+13285,"{'timezone': 'UTC', 'date': '2024-10-20', 'time': '17:00', 'timestamp': 1729443600}",7,U.S. Bank Stadium,FT,Minnesota Vikings,Detroit Lions,29.0,31.0
+13281,"{'timezone': 'UTC', 'date': '2024-10-20', 'time': '17:00', 'timestamp': 1729443600}",7,Highmark Stadium,FT,Buffalo Bills,Tennessee Titans,34.0,10.0
+13282,"{'timezone': 'UTC', 'date': '2024-10-20', 'time': '17:00', 'timestamp': 1729443600}",7,Huntington Bank Field,FT,Cleveland Browns,Cincinnati Bengals,14.0,21.0
+13283,"{'timezone': 'UTC', 'date': '2024-10-20', 'time': '17:00', 'timestamp': 1729443600}",7,Lambeau Field,FT,Green Bay Packers,Houston Texans,24.0,22.0
+13284,"{'timezone': 'UTC', 'date': '2024-10-20', 'time': '17:00', 'timestamp': 1729443600}",7,Lucas Oil Stadium,FT,Indianapolis Colts,Miami Dolphins,16.0,10.0
+13292,"{'timezone': 'UTC', 'date': '2024-10-22', 'time': '01:00', 'timestamp': 1729558800}",7,State Farm Stadium,FT,Arizona Cardinals,Los Angeles Chargers,17.0,15.0
+13291,"{'timezone': 'UTC', 'date': '2024-10-22', 'time': '00:15', 'timestamp': 1729556100}",7,Raymond James Stadium,FT,Tampa Bay Buccaneers,Baltimore Ravens,31.0,41.0
+13307,"{'timezone': 'UTC', 'date': '2024-10-28', 'time': '00:20', 'timestamp': 1730074800}",8,Levi's Stadium,FT,San Francisco 49ers,Dallas Cowboys,30.0,24.0
+13306,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '20:25', 'timestamp': 1730060700}",8,Allegiant Stadium,FT,Las Vegas Raiders,Kansas City Chiefs,20.0,27.0
+13308,"{'timezone': 'UTC', 'date': '2024-10-29', 'time': '00:15', 'timestamp': 1730160900}",8,Acrisure Stadium,FT,Pittsburgh Steelers,New York Giants,26.0,18.0
+13304,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '17:00', 'timestamp': 1730048400}",8,Paycor Stadium,FT,Cincinnati Bengals,Philadelphia Eagles,17.0,37.0
+13302,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '20:05', 'timestamp': 1730059500}",8,SoFi Stadium,FT,Los Angeles Chargers,New Orleans Saints,26.0,8.0
+13303,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '20:05', 'timestamp': 1730059500}",8,Lumen Field,FT,Seattle Seahawks,Buffalo Bills,10.0,31.0
+13299,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '20:25', 'timestamp': 1730060700}",8,Northwest Stadium,FT,Washington Commanders,Chicago Bears,18.0,15.0
+13305,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '20:25', 'timestamp': 1730060700}",8,Empower Field at Mile High,FT,Denver Broncos,Carolina Panthers,28.0,14.0
+13300,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '17:00', 'timestamp': 1730048400}",8,EverBank Stadium,FT,Jacksonville Jaguars,Green Bay Packers,27.0,30.0
+13301,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '17:00', 'timestamp': 1730048400}",8,NRG Stadium,FT,Houston Texans,Indianapolis Colts,23.0,20.0
+13298,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '17:00', 'timestamp': 1730048400}",8,Raymond James Stadium,FT,Tampa Bay Buccaneers,Atlanta Falcons,26.0,31.0
+13297,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '17:00', 'timestamp': 1730048400}",8,Gillette Stadium,FT,New England Patriots,New York Jets,25.0,22.0
+13296,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '17:00', 'timestamp': 1730048400}",8,Hard Rock Stadium,FT,Miami Dolphins,Arizona Cardinals,27.0,28.0
+13294,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '17:00', 'timestamp': 1730048400}",8,Huntington Bank Field,FT,Cleveland Browns,Baltimore Ravens,29.0,24.0
+13293,"{'timezone': 'UTC', 'date': '2024-10-25', 'time': '00:15', 'timestamp': 1729815300}",8,SoFi Stadium,FT,Los Angeles Rams,Minnesota Vikings,30.0,20.0
+13295,"{'timezone': 'UTC', 'date': '2024-10-27', 'time': '17:00', 'timestamp': 1730048400}",8,Ford Field,FT,Detroit Lions,Tennessee Titans,52.0,14.0
+13318,"{'timezone': 'UTC', 'date': '2024-11-03', 'time': '18:00', 'timestamp': 1730656800}",9,M&T Bank Stadium,FT,Baltimore Ravens,Denver Broncos,41.0,10.0
+13317,"{'timezone': 'UTC', 'date': '2024-11-03', 'time': '18:00', 'timestamp': 1730656800}",9,Bank of America Stadium,FT,Carolina Panthers,New Orleans Saints,23.0,22.0
+13323,"{'timezone': 'UTC', 'date': '2024-11-05', 'time': '01:15', 'timestamp': 1730769300}",9,GEHA Field at Arrowhead Stadium,,Kansas City Chiefs,Tampa Bay Buccaneers,30.0,24.0
+13315,"{'timezone': 'UTC', 'date': '2024-11-04', 'time': '01:20', 'timestamp': 1730683200}",9,U.S. Bank Stadium,FT,Minnesota Vikings,Indianapolis Colts,21.0,13.0
+13319,"{'timezone': 'UTC', 'date': '2024-11-03', 'time': '21:05', 'timestamp': 1730667900}",9,State Farm Stadium,FT,Arizona Cardinals,Chicago Bears,29.0,9.0
+13322,"{'timezone': 'UTC', 'date': '2024-11-03', 'time': '21:05', 'timestamp': 1730667900}",9,Lincoln Financial Field,FT,Philadelphia Eagles,Jacksonville Jaguars,28.0,23.0
+13320,"{'timezone': 'UTC', 'date': '2024-11-03', 'time': '21:25', 'timestamp': 1730669100}",9,Lambeau Field,FT,Green Bay Packers,Detroit Lions,14.0,24.0
+13321,"{'timezone': 'UTC', 'date': '2024-11-03', 'time': '21:25', 'timestamp': 1730669100}",9,Lumen Field,,Seattle Seahawks,Los Angeles Rams,20.0,26.0
+13316,"{'timezone': 'UTC', 'date': '2024-11-03', 'time': '18:00', 'timestamp': 1730656800}",9,MetLife Stadium,FT,New York Giants,Washington Commanders,22.0,27.0
+13314,"{'timezone': 'UTC', 'date': '2024-11-03', 'time': '18:00', 'timestamp': 1730656800}",9,Nissan Stadium,,Tennessee Titans,New England Patriots,20.0,17.0
+13312,"{'timezone': 'UTC', 'date': '2024-11-03', 'time': '18:00', 'timestamp': 1730656800}",9,Paycor Stadium,FT,Cincinnati Bengals,Las Vegas Raiders,41.0,24.0
+13313,"{'timezone': 'UTC', 'date': '2024-11-03', 'time': '18:00', 'timestamp': 1730656800}",9,Huntington Bank Field,FT,Cleveland Browns,Los Angeles Chargers,10.0,27.0
+13309,"{'timezone': 'UTC', 'date': '2024-11-01', 'time': '00:15', 'timestamp': 1730420100}",9,MetLife Stadium,FT,New York Jets,Houston Texans,21.0,13.0
+13311,"{'timezone': 'UTC', 'date': '2024-11-03', 'time': '18:00', 'timestamp': 1730656800}",9,Highmark Stadium,FT,Buffalo Bills,Miami Dolphins,30.0,27.0
+13310,"{'timezone': 'UTC', 'date': '2024-11-03', 'time': '18:00', 'timestamp': 1730656800}",9,Mercedes-Benz Stadium,FT,Atlanta Falcons,Dallas Cowboys,27.0,21.0
+13327,"{'timezone': 'UTC', 'date': '2024-11-10', 'time': '18:00', 'timestamp': 1731261600}",10,Lucas Oil Stadium,FT,Indianapolis Colts,Buffalo Bills,20.0,30.0
+13331,"{'timezone': 'UTC', 'date': '2024-11-10', 'time': '18:00', 'timestamp': 1731261600}",10,Northwest Stadium,FT,Washington Commanders,Pittsburgh Steelers,27.0,28.0
+13330,"{'timezone': 'UTC', 'date': '2024-11-10', 'time': '18:00', 'timestamp': 1731261600}",10,Raymond James Stadium,FT,Tampa Bay Buccaneers,San Francisco 49ers,20.0,23.0
+13332,"{'timezone': 'UTC', 'date': '2024-11-10', 'time': '18:00', 'timestamp': 1731261600}",10,EverBank Stadium,FT,Jacksonville Jaguars,Minnesota Vikings,7.0,12.0
+13333,"{'timezone': 'UTC', 'date': '2024-11-10', 'time': '21:05', 'timestamp': 1731272700}",10,SoFi Stadium,FT,Los Angeles Chargers,Tennessee Titans,27.0,17.0
+13334,"{'timezone': 'UTC', 'date': '2024-11-10', 'time': '21:25', 'timestamp': 1731273900}",10,AT&T Stadium,FT,Dallas Cowboys,Philadelphia Eagles,6.0,34.0
+13335,"{'timezone': 'UTC', 'date': '2024-11-10', 'time': '21:25', 'timestamp': 1731273900}",10,State Farm Stadium,FT,Arizona Cardinals,New York Jets,31.0,6.0
+13336,"{'timezone': 'UTC', 'date': '2024-11-11', 'time': '01:20', 'timestamp': 1731288000}",10,NRG Stadium,FT,Houston Texans,Detroit Lions,23.0,26.0
+13337,"{'timezone': 'UTC', 'date': '2024-11-12', 'time': '01:15', 'timestamp': 1731374100}",10,SoFi Stadium,FT,Los Angeles Rams,Miami Dolphins,15.0,23.0
+13328,"{'timezone': 'UTC', 'date': '2024-11-10', 'time': '18:00', 'timestamp': 1731261600}",10,GEHA Field at Arrowhead Stadium,FT,Kansas City Chiefs,Denver Broncos,16.0,14.0
+13329,"{'timezone': 'UTC', 'date': '2024-11-10', 'time': '18:00', 'timestamp': 1731261600}",10,Caesars Superdome,FT,New Orleans Saints,Atlanta Falcons,20.0,17.0
+13325,"{'timezone': 'UTC', 'date': '2024-11-10', 'time': '14:30', 'timestamp': 1731249000}",10,Allianz Arena,,Carolina Panthers,New York Giants,20.0,17.0
+13324,"{'timezone': 'UTC', 'date': '2024-11-08', 'time': '01:15', 'timestamp': 1731028500}",10,M&T Bank Stadium,FT,Baltimore Ravens,Cincinnati Bengals,35.0,34.0
+13326,"{'timezone': 'UTC', 'date': '2024-11-10', 'time': '18:00', 'timestamp': 1731261600}",10,Soldier Field,FT,Chicago Bears,New England Patriots,3.0,19.0
+13342,"{'timezone': 'UTC', 'date': '2024-11-17', 'time': '18:00', 'timestamp': 1731866400}",11,Hard Rock Stadium,FT,Miami Dolphins,Las Vegas Raiders,34.0,19.0
+13341,"{'timezone': 'UTC', 'date': '2024-11-17', 'time': '18:00', 'timestamp': 1731866400}",11,Nissan Stadium,FT,Tennessee Titans,Minnesota Vikings,13.0,23.0
+13340,"{'timezone': 'UTC', 'date': '2024-11-17', 'time': '18:00', 'timestamp': 1731866400}",11,Ford Field,FT,Detroit Lions,Jacksonville Jaguars,52.0,6.0
+13348,"{'timezone': 'UTC', 'date': '2024-11-17', 'time': '21:25', 'timestamp': 1731878700}",11,Highmark Stadium,FT,Buffalo Bills,Kansas City Chiefs,30.0,21.0
+13347,"{'timezone': 'UTC', 'date': '2024-11-17', 'time': '21:05', 'timestamp': 1731877500}",11,Levi's Stadium,FT,San Francisco 49ers,Seattle Seahawks,17.0,20.0
+13350,"{'timezone': 'UTC', 'date': '2024-11-17', 'time': '18:00', 'timestamp': 1731866400}",11,MetLife Stadium,FT,New York Jets,Indianapolis Colts,27.0,28.0
+13346,"{'timezone': 'UTC', 'date': '2024-11-17', 'time': '21:05', 'timestamp': 1731877500}",11,Empower Field at Mile High,FT,Denver Broncos,Atlanta Falcons,38.0,6.0
+13351,"{'timezone': 'UTC', 'date': '2024-11-19', 'time': '01:15', 'timestamp': 1731978900}",11,AT&T Stadium,FT,Dallas Cowboys,Houston Texans,10.0,34.0
+13349,"{'timezone': 'UTC', 'date': '2024-11-18', 'time': '01:20', 'timestamp': 1731892800}",11,SoFi Stadium,FT,Los Angeles Chargers,Cincinnati Bengals,34.0,27.0
+13344,"{'timezone': 'UTC', 'date': '2024-11-17', 'time': '18:00', 'timestamp': 1731866400}",11,Caesars Superdome,FT,New Orleans Saints,Cleveland Browns,35.0,14.0
+13345,"{'timezone': 'UTC', 'date': '2024-11-17', 'time': '18:00', 'timestamp': 1731866400}",11,Acrisure Stadium,FT,Pittsburgh Steelers,Baltimore Ravens,18.0,16.0
+13338,"{'timezone': 'UTC', 'date': '2024-11-15', 'time': '01:15', 'timestamp': 1731633300}",11,Lincoln Financial Field,FT,Philadelphia Eagles,Washington Commanders,26.0,18.0
+13343,"{'timezone': 'UTC', 'date': '2024-11-17', 'time': '18:00', 'timestamp': 1731866400}",11,Gillette Stadium,FT,New England Patriots,Los Angeles Rams,22.0,28.0
+13339,"{'timezone': 'UTC', 'date': '2024-11-17', 'time': '18:00', 'timestamp': 1731866400}",11,Soldier Field,FT,Chicago Bears,Green Bay Packers,19.0,20.0
+13358,"{'timezone': 'UTC', 'date': '2024-11-24', 'time': '18:00', 'timestamp': 1732471200}",12,Bank of America Stadium,FT,Carolina Panthers,Kansas City Chiefs,27.0,30.0
+13353,"{'timezone': 'UTC', 'date': '2024-11-24', 'time': '18:00', 'timestamp': 1732471200}",12,Soldier Field,,Chicago Bears,Minnesota Vikings,27.0,30.0
+13359,"{'timezone': 'UTC', 'date': '2024-11-24', 'time': '18:00', 'timestamp': 1732471200}",12,NRG Stadium,FT,Houston Texans,Tennessee Titans,27.0,32.0
+13356,"{'timezone': 'UTC', 'date': '2024-11-24', 'time': '18:00', 'timestamp': 1732471200}",12,MetLife Stadium,FT,New York Giants,Tampa Bay Buccaneers,7.0,30.0
+13357,"{'timezone': 'UTC', 'date': '2024-11-24', 'time': '18:00', 'timestamp': 1732471200}",12,Northwest Stadium,FT,Washington Commanders,Dallas Cowboys,26.0,34.0
+13364,"{'timezone': 'UTC', 'date': '2024-11-26', 'time': '01:15', 'timestamp': 1732583700}",12,SoFi Stadium,FT,Los Angeles Chargers,Baltimore Ravens,23.0,30.0
+13361,"{'timezone': 'UTC', 'date': '2024-11-24', 'time': '21:25', 'timestamp': 1732483500}",12,Lambeau Field,FT,Green Bay Packers,San Francisco 49ers,38.0,10.0
+13362,"{'timezone': 'UTC', 'date': '2024-11-24', 'time': '21:25', 'timestamp': 1732483500}",12,Lumen Field,FT,Seattle Seahawks,Arizona Cardinals,16.0,6.0
+13363,"{'timezone': 'UTC', 'date': '2024-11-25', 'time': '01:20', 'timestamp': 1732497600}",12,SoFi Stadium,FT,Los Angeles Rams,Philadelphia Eagles,20.0,37.0
+13360,"{'timezone': 'UTC', 'date': '2024-11-24', 'time': '21:05', 'timestamp': 1732482300}",12,Allegiant Stadium,FT,Las Vegas Raiders,Denver Broncos,19.0,29.0
+13352,"{'timezone': 'UTC', 'date': '2024-11-22', 'time': '01:15', 'timestamp': 1732238100}",12,Huntington Bank Field,FT,Cleveland Browns,Pittsburgh Steelers,24.0,19.0
+13354,"{'timezone': 'UTC', 'date': '2024-11-24', 'time': '18:00', 'timestamp': 1732471200}",12,Lucas Oil Stadium,FT,Indianapolis Colts,Detroit Lions,6.0,24.0
+13355,"{'timezone': 'UTC', 'date': '2024-11-24', 'time': '18:00', 'timestamp': 1732471200}",12,Hard Rock Stadium,FT,Miami Dolphins,New England Patriots,34.0,15.0
+13370,"{'timezone': 'UTC', 'date': '2024-12-01', 'time': '18:00', 'timestamp': 1733076000}",13,Paycor Stadium,FT,Cincinnati Bengals,Pittsburgh Steelers,38.0,44.0
+13371,"{'timezone': 'UTC', 'date': '2024-12-01', 'time': '18:00', 'timestamp': 1733076000}",13,U.S. Bank Stadium,FT,Minnesota Vikings,Arizona Cardinals,23.0,22.0
+13372,"{'timezone': 'UTC', 'date': '2024-12-01', 'time': '18:00', 'timestamp': 1733076000}",13,Gillette Stadium,FT,New England Patriots,Indianapolis Colts,24.0,25.0
+13369,"{'timezone': 'UTC', 'date': '2024-12-01', 'time': '18:00', 'timestamp': 1733076000}",13,Mercedes-Benz Stadium,FT,Atlanta Falcons,Los Angeles Chargers,13.0,17.0
+13366,"{'timezone': 'UTC', 'date': '2024-11-28', 'time': '21:30', 'timestamp': 1732829400}",13,AT&T Stadium,FT,Dallas Cowboys,New York Giants,27.0,20.0
+13368,"{'timezone': 'UTC', 'date': '2024-11-29', 'time': '20:00', 'timestamp': 1732910400}",13,GEHA Field at Arrowhead Stadium,FT,Kansas City Chiefs,Las Vegas Raiders,19.0,17.0
+13365,"{'timezone': 'UTC', 'date': '2024-11-28', 'time': '17:30', 'timestamp': 1732815000}",13,Ford Field,FT,Detroit Lions,Chicago Bears,23.0,20.0
+13373,"{'timezone': 'UTC', 'date': '2024-12-01', 'time': '18:00', 'timestamp': 1733076000}",13,MetLife Stadium,FT,New York Jets,Seattle Seahawks,21.0,26.0
+13380,"{'timezone': 'UTC', 'date': '2024-12-03', 'time': '01:15', 'timestamp': 1733188500}",13,Empower Field at Mile High,FT,Denver Broncos,Cleveland Browns,41.0,32.0
+13377,"{'timezone': 'UTC', 'date': '2024-12-01', 'time': '21:05', 'timestamp': 1733087100}",13,Bank of America Stadium,,Carolina Panthers,Tampa Bay Buccaneers,23.0,26.0
+13378,"{'timezone': 'UTC', 'date': '2024-12-01', 'time': '21:25', 'timestamp': 1733088300}",13,M&T Bank Stadium,FT,Baltimore Ravens,Philadelphia Eagles,19.0,24.0
+13379,"{'timezone': 'UTC', 'date': '2024-12-02', 'time': '01:20', 'timestamp': 1733102400}",13,Highmark Stadium,FT,Buffalo Bills,San Francisco 49ers,35.0,10.0
+13376,"{'timezone': 'UTC', 'date': '2024-12-01', 'time': '21:05', 'timestamp': 1733087100}",13,Caesars Superdome,FT,New Orleans Saints,Los Angeles Rams,14.0,21.0
+13367,"{'timezone': 'UTC', 'date': '2024-11-29', 'time': '01:20', 'timestamp': 1732843200}",13,Lambeau Field,FT,Green Bay Packers,Miami Dolphins,30.0,17.0
+13375,"{'timezone': 'UTC', 'date': '2024-12-01', 'time': '18:00', 'timestamp': 1733076000}",13,EverBank Stadium,FT,Jacksonville Jaguars,Houston Texans,20.0,23.0
+13374,"{'timezone': 'UTC', 'date': '2024-12-01', 'time': '18:00', 'timestamp': 1733076000}",13,Northwest Stadium,FT,Washington Commanders,Tennessee Titans,42.0,19.0
+13386,"{'timezone': 'UTC', 'date': '2024-12-08', 'time': '18:00', 'timestamp': 1733680800}",14,Lincoln Financial Field,FT,Philadelphia Eagles,Carolina Panthers,22.0,16.0
+13387,"{'timezone': 'UTC', 'date': '2024-12-08', 'time': '18:00', 'timestamp': 1733680800}",14,Acrisure Stadium,FT,Pittsburgh Steelers,Cleveland Browns,27.0,14.0
+13388,"{'timezone': 'UTC', 'date': '2024-12-08', 'time': '18:00', 'timestamp': 1733680800}",14,Raymond James Stadium,FT,Tampa Bay Buccaneers,Las Vegas Raiders,28.0,13.0
+13385,"{'timezone': 'UTC', 'date': '2024-12-08', 'time': '18:00', 'timestamp': 1733680800}",14,MetLife Stadium,FT,New York Giants,New Orleans Saints,11.0,14.0
+13382,"{'timezone': 'UTC', 'date': '2024-12-08', 'time': '18:00', 'timestamp': 1733680800}",14,Nissan Stadium,FT,Tennessee Titans,Jacksonville Jaguars,6.0,10.0
+13384,"{'timezone': 'UTC', 'date': '2024-12-08', 'time': '18:00', 'timestamp': 1733680800}",14,U.S. Bank Stadium,FT,Minnesota Vikings,Atlanta Falcons,42.0,21.0
+13381,"{'timezone': 'UTC', 'date': '2024-12-06', 'time': '01:15', 'timestamp': 1733447700}",14,Ford Field,FT,Detroit Lions,Green Bay Packers,34.0,31.0
+13389,"{'timezone': 'UTC', 'date': '2024-12-08', 'time': '21:05', 'timestamp': 1733691900}",14,State Farm Stadium,FT,Arizona Cardinals,Seattle Seahawks,18.0,30.0
+13392,"{'timezone': 'UTC', 'date': '2024-12-09', 'time': '01:20', 'timestamp': 1733707200}",14,GEHA Field at Arrowhead Stadium,FT,Kansas City Chiefs,Los Angeles Chargers,19.0,17.0
+13393,"{'timezone': 'UTC', 'date': '2024-12-10', 'time': '01:15', 'timestamp': 1733793300}",14,AT&T Stadium,FT,Dallas Cowboys,Cincinnati Bengals,20.0,27.0
+13391,"{'timezone': 'UTC', 'date': '2024-12-08', 'time': '21:25', 'timestamp': 1733693100}",14,Levi's Stadium,FT,San Francisco 49ers,Chicago Bears,38.0,13.0
+13390,"{'timezone': 'UTC', 'date': '2024-12-08', 'time': '21:25', 'timestamp': 1733693100}",14,SoFi Stadium,FT,Los Angeles Rams,Buffalo Bills,44.0,42.0
+13383,"{'timezone': 'UTC', 'date': '2024-12-08', 'time': '18:00', 'timestamp': 1733680800}",14,Hard Rock Stadium,,Miami Dolphins,New York Jets,32.0,26.0
+13405,"{'timezone': 'UTC', 'date': '2024-12-15', 'time': '21:25', 'timestamp': 1734297900}",15,State Farm Stadium,FT,Arizona Cardinals,New England Patriots,30.0,17.0
+13394,"{'timezone': 'UTC', 'date': '2024-12-13', 'time': '01:15', 'timestamp': 1734052500}",15,Levi's Stadium,FT,San Francisco 49ers,Los Angeles Rams,6.0,12.0
+13395,"{'timezone': 'UTC', 'date': '2024-12-15', 'time': '18:00', 'timestamp': 1734285600}",15,Huntington Bank Field,FT,Cleveland Browns,Kansas City Chiefs,7.0,21.0
+13401,"{'timezone': 'UTC', 'date': '2024-12-15', 'time': '18:00', 'timestamp': 1734285600}",15,NRG Stadium,FT,Houston Texans,Miami Dolphins,20.0,12.0
+13400,"{'timezone': 'UTC', 'date': '2024-12-15', 'time': '18:00', 'timestamp': 1734285600}",15,EverBank Stadium,FT,Jacksonville Jaguars,New York Jets,25.0,32.0
+13399,"{'timezone': 'UTC', 'date': '2024-12-15', 'time': '18:00', 'timestamp': 1734285600}",15,Bank of America Stadium,FT,Carolina Panthers,Dallas Cowboys,14.0,30.0
+13398,"{'timezone': 'UTC', 'date': '2024-12-15', 'time': '18:00', 'timestamp': 1734285600}",15,MetLife Stadium,FT,New York Giants,Baltimore Ravens,14.0,35.0
+13397,"{'timezone': 'UTC', 'date': '2024-12-15', 'time': '18:00', 'timestamp': 1734285600}",15,Caesars Superdome,FT,New Orleans Saints,Washington Commanders,19.0,20.0
+13404,"{'timezone': 'UTC', 'date': '2024-12-15', 'time': '21:25', 'timestamp': 1734297900}",15,Lincoln Financial Field,FT,Philadelphia Eagles,Pittsburgh Steelers,27.0,13.0
+13407,"{'timezone': 'UTC', 'date': '2024-12-16', 'time': '01:20', 'timestamp': 1734312000}",15,Lumen Field,FT,Seattle Seahawks,Green Bay Packers,13.0,30.0
+13406,"{'timezone': 'UTC', 'date': '2024-12-15', 'time': '21:25', 'timestamp': 1734297900}",15,SoFi Stadium,FT,Los Angeles Chargers,Tampa Bay Buccaneers,17.0,40.0
+13409,"{'timezone': 'UTC', 'date': '2024-12-17', 'time': '01:30', 'timestamp': 1734399000}",15,Allegiant Stadium,FT,Las Vegas Raiders,Atlanta Falcons,9.0,15.0
+13396,"{'timezone': 'UTC', 'date': '2024-12-15', 'time': '18:00', 'timestamp': 1734285600}",15,Nissan Stadium,FT,Tennessee Titans,Cincinnati Bengals,27.0,37.0
+13403,"{'timezone': 'UTC', 'date': '2024-12-15', 'time': '21:25', 'timestamp': 1734297900}",15,Ford Field,FT,Detroit Lions,Buffalo Bills,42.0,48.0
+13408,"{'timezone': 'UTC', 'date': '2024-12-17', 'time': '01:00', 'timestamp': 1734397200}",15,U.S. Bank Stadium,FT,Minnesota Vikings,Chicago Bears,30.0,12.0
+13402,"{'timezone': 'UTC', 'date': '2024-12-15', 'time': '21:25', 'timestamp': 1734297900}",15,Empower Field at Mile High,FT,Denver Broncos,Indianapolis Colts,31.0,13.0
+13417,"{'timezone': 'UTC', 'date': '2024-12-22', 'time': '18:00', 'timestamp': 1734890400}",16,MetLife Stadium,FT,New York Jets,Los Angeles Rams,9.0,19.0
+13423,"{'timezone': 'UTC', 'date': '2024-12-22', 'time': '21:25', 'timestamp': 1734902700}",16,Hard Rock Stadium,FT,Miami Dolphins,San Francisco 49ers,29.0,17.0
+13416,"{'timezone': 'UTC', 'date': '2024-12-22', 'time': '18:00', 'timestamp': 1734890400}",16,Lucas Oil Stadium,FT,Indianapolis Colts,Tennessee Titans,38.0,30.0
+13410,"{'timezone': 'UTC', 'date': '2024-12-22', 'time': '18:00', 'timestamp': 1734890400}",16,Paycor Stadium,FT,Cincinnati Bengals,Cleveland Browns,24.0,6.0
+13412,"{'timezone': 'UTC', 'date': '2024-12-21', 'time': '21:30', 'timestamp': 1734816600}",16,M&T Bank Stadium,FT,Baltimore Ravens,Pittsburgh Steelers,34.0,17.0
+13415,"{'timezone': 'UTC', 'date': '2024-12-22', 'time': '18:00', 'timestamp': 1734890400}",16,Soldier Field,FT,Chicago Bears,Detroit Lions,17.0,34.0
+13422,"{'timezone': 'UTC', 'date': '2024-12-22', 'time': '21:25', 'timestamp': 1734902700}",16,Allegiant Stadium,FT,Las Vegas Raiders,Jacksonville Jaguars,19.0,14.0
+13414,"{'timezone': 'UTC', 'date': '2024-12-22', 'time': '21:25', 'timestamp': 1734902700}",16,Highmark Stadium,FT,Buffalo Bills,New England Patriots,24.0,21.0
+13421,"{'timezone': 'UTC', 'date': '2024-12-22', 'time': '21:05', 'timestamp': 1734901500}",16,Lumen Field,FT,Seattle Seahawks,Minnesota Vikings,24.0,27.0
+13419,"{'timezone': 'UTC', 'date': '2024-12-22', 'time': '18:00', 'timestamp': 1734890400}",16,Bank of America Stadium,,Carolina Panthers,Arizona Cardinals,36.0,30.0
+13418,"{'timezone': 'UTC', 'date': '2024-12-22', 'time': '18:00', 'timestamp': 1734890400}",16,Northwest Stadium,FT,Washington Commanders,Philadelphia Eagles,36.0,33.0
+13413,"{'timezone': 'UTC', 'date': '2024-12-22', 'time': '18:00', 'timestamp': 1734890400}",16,Mercedes-Benz Stadium,FT,Atlanta Falcons,New York Giants,34.0,7.0
+13424,"{'timezone': 'UTC', 'date': '2024-12-23', 'time': '01:20', 'timestamp': 1734916800}",16,AT&T Stadium,FT,Dallas Cowboys,Tampa Bay Buccaneers,26.0,24.0
+13420,"{'timezone': 'UTC', 'date': '2024-12-20', 'time': '01:15', 'timestamp': 1734657300}",16,SoFi Stadium,FT,Los Angeles Chargers,Denver Broncos,34.0,27.0
+13411,"{'timezone': 'UTC', 'date': '2024-12-21', 'time': '18:00', 'timestamp': 1734804000}",16,GEHA Field at Arrowhead Stadium,FT,Kansas City Chiefs,Houston Texans,27.0,19.0
+13425,"{'timezone': 'UTC', 'date': '2024-12-24', 'time': '01:15', 'timestamp': 1735002900}",16,Lambeau Field,FT,Green Bay Packers,New Orleans Saints,34.0,0.0
+13427,"{'timezone': 'UTC', 'date': '2024-12-25', 'time': '21:30', 'timestamp': 1735162200}",17,NRG Stadium,FT,Houston Texans,Baltimore Ravens,2.0,31.0
+13426,"{'timezone': 'UTC', 'date': '2024-12-25', 'time': '18:00', 'timestamp': 1735149600}",17,Acrisure Stadium,FT,Pittsburgh Steelers,Kansas City Chiefs,10.0,29.0
+13439,"{'timezone': 'UTC', 'date': '2024-12-29', 'time': '18:00', 'timestamp': 1735495200}",17,Lincoln Financial Field,FT,Philadelphia Eagles,Dallas Cowboys,41.0,7.0
+13434,"{'timezone': 'UTC', 'date': '2024-12-29', 'time': '18:00', 'timestamp': 1735495200}",17,Highmark Stadium,FT,Buffalo Bills,New York Jets,40.0,14.0
+13432,"{'timezone': 'UTC', 'date': '2024-12-29', 'time': '18:00', 'timestamp': 1735495200}",17,MetLife Stadium,FT,New York Giants,Indianapolis Colts,45.0,33.0
+13430,"{'timezone': 'UTC', 'date': '2024-12-29', 'time': '01:00', 'timestamp': 1735434000}",17,SoFi Stadium,FT,Los Angeles Rams,Arizona Cardinals,13.0,9.0
+13429,"{'timezone': 'UTC', 'date': '2024-12-28', 'time': '21:30', 'timestamp': 1735421400}",17,Paycor Stadium,,Cincinnati Bengals,Denver Broncos,30.0,24.0
+13431,"{'timezone': 'UTC', 'date': '2024-12-28', 'time': '18:00', 'timestamp': 1735408800}",17,Gillette Stadium,FT,New England Patriots,Los Angeles Chargers,7.0,40.0
+13438,"{'timezone': 'UTC', 'date': '2024-12-29', 'time': '18:00', 'timestamp': 1735495200}",17,EverBank Stadium,FT,Jacksonville Jaguars,Tennessee Titans,20.0,13.0
+13435,"{'timezone': 'UTC', 'date': '2024-12-29', 'time': '21:25', 'timestamp': 1735507500}",17,U.S. Bank Stadium,FT,Minnesota Vikings,Green Bay Packers,27.0,25.0
+13440,"{'timezone': 'UTC', 'date': '2024-12-29', 'time': '21:05', 'timestamp': 1735506300}",17,Huntington Bank Field,FT,Cleveland Browns,Miami Dolphins,3.0,20.0
+13433,"{'timezone': 'UTC', 'date': '2024-12-30', 'time': '01:20', 'timestamp': 1735521600}",17,Northwest Stadium,,Washington Commanders,Atlanta Falcons,30.0,24.0
+13428,"{'timezone': 'UTC', 'date': '2024-12-27', 'time': '01:15', 'timestamp': 1735262100}",17,Soldier Field,FT,Chicago Bears,Seattle Seahawks,3.0,6.0
+13437,"{'timezone': 'UTC', 'date': '2024-12-29', 'time': '18:00', 'timestamp': 1735495200}",17,Raymond James Stadium,FT,Tampa Bay Buccaneers,Carolina Panthers,48.0,14.0
+13441,"{'timezone': 'UTC', 'date': '2024-12-31', 'time': '01:15', 'timestamp': 1735607700}",17,Levi's Stadium,FT,San Francisco 49ers,Detroit Lions,34.0,40.0
+13436,"{'timezone': 'UTC', 'date': '2024-12-29', 'time': '18:00', 'timestamp': 1735495200}",17,Caesars Superdome,FT,New Orleans Saints,Las Vegas Raiders,10.0,25.0
+13445,"{'timezone': 'UTC', 'date': '2025-01-06', 'time': '01:20', 'timestamp': 1736126400}",18,Ford Field,FT,Detroit Lions,Minnesota Vikings,31.0,9.0
+13454,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '21:25', 'timestamp': 1736112300}",18,State Farm Stadium,FT,Arizona Cardinals,San Francisco 49ers,47.0,24.0
+13452,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '21:25', 'timestamp': 1736112300}",18,MetLife Stadium,FT,New York Jets,Miami Dolphins,32.0,20.0
+13451,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '18:00', 'timestamp': 1736100000}",18,Gillette Stadium,FT,New England Patriots,Buffalo Bills,23.0,16.0
+13448,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '18:00', 'timestamp': 1736100000}",18,Lucas Oil Stadium,,Indianapolis Colts,Jacksonville Jaguars,26.0,23.0
+13447,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '18:00', 'timestamp': 1736100000}",18,Nissan Stadium,FT,Tennessee Titans,Houston Texans,14.0,23.0
+13450,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '21:25', 'timestamp': 1736112300}",18,SoFi Stadium,FT,Los Angeles Rams,Seattle Seahawks,25.0,30.0
+13449,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '21:25', 'timestamp': 1736112300}",18,Allegiant Stadium,FT,Las Vegas Raiders,Los Angeles Chargers,20.0,34.0
+13444,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '21:25', 'timestamp': 1736112300}",18,Empower Field at Mile High,FT,Denver Broncos,Kansas City Chiefs,38.0,0.0
+13456,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '18:00', 'timestamp': 1736100000}",18,Raymond James Stadium,FT,Tampa Bay Buccaneers,New Orleans Saints,27.0,19.0
+13453,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '18:00', 'timestamp': 1736100000}",18,Lincoln Financial Field,FT,Philadelphia Eagles,New York Giants,20.0,13.0
+13457,"{'timezone': 'UTC', 'date': '2025-01-04', 'time': '21:30', 'timestamp': 1736026200}",18,M&T Bank Stadium,FT,Baltimore Ravens,Cleveland Browns,35.0,10.0
+13455,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '01:00', 'timestamp': 1736038800}",18,Acrisure Stadium,FT,Pittsburgh Steelers,Cincinnati Bengals,17.0,19.0
+13442,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '18:00', 'timestamp': 1736100000}",18,Mercedes-Benz Stadium,,Atlanta Falcons,Carolina Panthers,38.0,44.0
+13443,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '18:00', 'timestamp': 1736100000}",18,AT&T Stadium,FT,Dallas Cowboys,Washington Commanders,19.0,23.0
+13446,"{'timezone': 'UTC', 'date': '2025-01-05', 'time': '18:00', 'timestamp': 1736100000}",18,Lambeau Field,FT,Green Bay Packers,Chicago Bears,22.0,24.0
